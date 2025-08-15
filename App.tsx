@@ -12,6 +12,7 @@ import { InitializationProgress } from './components/InitializationProgress.tsx'
 import type { SaveData, Entity, AIContextType, FormData, CustomRule, KnownEntities } from './components/types.ts';
 import { CHANGELOG_DATA } from './components/data/changelog.ts';
 import { ReferenceIdGenerator } from './components/utils/ReferenceIdGenerator.ts';
+import { importStoryImagesFromGameData } from './components/utils/storyImageSystem.ts';
 
 // --- Hằng số cho hệ thống tạo ảnh ---
 export const IMAGE_GENERATION_PROMPTS = {
@@ -905,8 +906,7 @@ Mô tả ngoại hình phải phù hợp với bối cảnh và tính cách, t�
                             year: loadedJson.gameTime?.year || 1, 
                             month: loadedJson.gameTime?.month || 1, 
                             day: loadedJson.gameTime?.day || 1, 
-                            hour: loadedJson.gameTime?.hour || 8, 
-                            minute: loadedJson.gameTime?.minute || 0 
+                            hour: loadedJson.gameTime?.hour || 8
                         },
                         chronicle: loadedJson.chronicle || { memoir: [], chapter: [], turn: [] },
                         storyLog: loadedJson.storyLog,
@@ -928,6 +928,9 @@ Mô tả ngoại hình phải phù hợp với bối cảnh và tính cách, t�
                         },
                     };
                     delete (validatedData as any).userKnowledge;
+
+                    // Import story images if available
+                    importStoryImagesFromGameData(loadedJson);
 
                     setGameState(validatedData);
                     setView('game');

@@ -45,7 +45,7 @@ import { EntityExportManager } from './utils/EntityExportManager';
 import { useDebouncedCallback } from './hooks/useDebounce.ts';
 import { OptimizedInteractiveText } from './OptimizedInteractiveText.tsx';
 import { getThemeColors } from './utils/themeUtils';
-import { enhanceStoryItems } from './utils/storyImageEnhancer';
+import { enhanceStoryItemsWithContextDebounced } from './utils/storyImageSystem';
 
 // Helper functions moved to extracted files
 
@@ -293,14 +293,20 @@ export const GameScreen: React.FC<{
         // Entity export debugging disabled
     }, [gameSettings.entityExportEnabled, gameSettings.entityExportInterval, gameSettings.entityExportDebugLogging]);
 
-    // Auto-enhance story items with image generation
+    // Auto-enhance story items with contextual image generation
     useEffect(() => {
         const timeout = setTimeout(() => {
-            enhanceStoryItems();
-        }, 500); // Small delay to ensure DOM is updated
+            const currentGameState: SaveData = {
+                worldData, knownEntities, statuses, quests, gameHistory, memories, party,
+                customRules, systemInstruction, turnCount, totalTokens, gameTime, chronicle,
+                compressedHistory, historyStats, cleanupStats, archivedMemories, memoryStats,
+                storyLog, choices, locationDiscoveryOrder, choiceHistory
+            };
+            enhanceStoryItemsWithContextDebounced(currentGameState);
+        }, 1000); // Increase delay to ensure DOM is fully updated
         
         return () => clearTimeout(timeout);
-    }, [storyLog]);
+    }, [storyLog, worldData, knownEntities, party]);
     
     // Define generateInitialStory callback before using it
     const generateInitialStory = useCallback(async () => {

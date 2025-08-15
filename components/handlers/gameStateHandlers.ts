@@ -1,6 +1,7 @@
 import type { SaveData, CustomRule, Memory, Entity } from '../types';
 import { GameSettings } from '../GameSettingsModal';
 import { ReferenceIdGenerator } from '../utils/ReferenceIdGenerator';
+import { exportStoryImagesWithGameData, importStoryImagesFromGameData } from '../utils/storyImageSystem';
 
 export interface GameStateHandlersParams {
     worldData: any;
@@ -79,7 +80,10 @@ export const createGameStateHandlers = (params: GameStateHandlersParams) => {
             storyLog, choices, locationDiscoveryOrder, choiceHistory
         };
         
-        const jsonString = JSON.stringify(currentGameState, null, 2);
+        // Export with story images included
+        const gameStateWithImages = exportStoryImagesWithGameData(currentGameState);
+        
+        const jsonString = JSON.stringify(gameStateWithImages, null, 2);
         const blob = new Blob([jsonString], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
