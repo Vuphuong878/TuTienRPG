@@ -13,6 +13,46 @@ import type { SaveData, Entity, AIContextType, FormData, CustomRule, KnownEntiti
 import { CHANGELOG_DATA } from './components/data/changelog.ts';
 import { ReferenceIdGenerator } from './components/utils/ReferenceIdGenerator.ts';
 
+// --- Hằng số cho hệ thống tạo ảnh ---
+export const IMAGE_GENERATION_PROMPTS = {
+  qualityControl: "ugly, poorly drawn hands, text, watermark, signature, extra limbs, deformed anatomy, blurry, low quality, artifacts, distorted proportions, bad composition, oversaturated colors, noise, duplicate characters, inconsistent lighting",
+  
+  nsfwOrSfw: {
+    sfw: "safe for work content, family-friendly, appropriate clothing, no sexual content, no nudity, tasteful presentation",
+    nsfw: "mature content allowed, artistic nudity permitted, sensual themes, adult situations, detailed anatomy"
+  },
+  
+  artStyle: "high-quality anime-style illustration, detailed character design, vibrant colors, professional digital art, studio lighting, cinematic composition, manga-inspired artwork, beautiful shading and highlights",
+  
+  worldView: "fantasy medieval world with Asian martial arts influences, mystical atmosphere, ancient temples and pagodas, misty mountains, traditional architecture mixed with magical elements, ethereal lighting, spiritual energy auras",
+  
+  characterAppearance: "detailed character with expressive eyes, flowing hair, traditional martial arts clothing or fantasy robes, distinctive facial features, dynamic pose showing personality and mood",
+  
+  npcArchetypes: "diverse characters with unique designs - wise masters with long beards, young disciples with determined expressions, mysterious hooded figures, elegant nobles in silk robes, rugged warriors with battle scars",
+  
+  magicEffects: "glowing spiritual energy, swirling chi auras, mystical light effects, floating magical symbols, elemental powers visualization, energy trails, divine radiance, supernatural phenomena"
+};
+
+export const generateImagePrompt = (
+  currentSceneText: string, 
+  characterName?: string, 
+  isNsfwEnabled: boolean = false
+): string => {
+  const { qualityControl, nsfwOrSfw, artStyle, worldView, characterAppearance, npcArchetypes, magicEffects } = IMAGE_GENERATION_PROMPTS;
+  
+  const contentGuideline = isNsfwEnabled ? nsfwOrSfw.nsfw : nsfwOrSfw.sfw;
+  
+  return `${artStyle}, ${worldView}, ${characterAppearance}, ${npcArchetypes}, ${magicEffects}. 
+
+Current scene: ${currentSceneText}
+
+${characterName ? `Main character: ${characterName}` : ''}
+
+Content guidelines: ${contentGuideline}
+
+Negative prompt: ${qualityControl}`;
+};
+
 // --- Hằng số ---
 export const DEFAULT_SYSTEM_INSTRUCTION = `BẠN LÀ MỘT QUẢN TRÒ (GAME MASTER) AI. Nhiệm vụ của bạn là điều khiển một trò chơi nhập vai phiêu lưu văn bản, tuân thủ NGHIÊM NGẶT các quy tắc sau:
 
