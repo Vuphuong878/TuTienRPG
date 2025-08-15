@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile Battery Optimization - Global Rules */
+@media (max-width: 768px) {
+  .transition-all {
+    transition-duration: 150ms !important;
+  }
+}
+
+/* Disable expensive backdrop filters on very small screens for better performance */
+@media (max-width: 480px) {
+  .backdrop-blur-sm { 
+    backdrop-filter: none !important; 
+    background-color: rgba(0, 0, 0, 0.3) !important; 
+  }
+  .backdrop-blur-md { 
+    backdrop-filter: none !important; 
+    background-color: rgba(0, 0, 0, 0.3) !important; 
+  }
+  .backdrop-blur-lg { 
+    backdrop-filter: none !important; 
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+/* Respect user's motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Status Panel Styles */
+.status-panel-dl {
+  @apply space-y-3;
+}
+
+.status-panel-dl details {
+  @apply bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden;
+  /* Desktop transitions */
+  transition: all 300ms ease;
+}
+
+.status-panel-dl summary {
+  @apply px-4 py-3 cursor-pointer font-semibold text-white/90 bg-gradient-to-r from-purple-500/20 to-pink-500/20 select-none;
+  @apply flex items-center gap-2;
+  /* Desktop transitions */
+  transition: all 200ms ease;
+}
+
+/* Desktop hover effects - only on devices with hover capability */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .status-panel-dl details:hover {
+    @apply bg-white/10;
+  }
+  
+  .status-panel-dl summary:hover {
+    @apply from-purple-500/30 to-pink-500/30;
+  }
+}
+
+/* Mobile optimizations - reduce animations for battery life */
+@media (max-width: 768px), (hover: none), (prefers-reduced-motion: reduce) {
+  .status-panel-dl details {
+    transition: all 150ms ease;
+  }
+  
+  .status-panel-dl summary {
+    transition: all 100ms ease;
+  }
+  
+  /* Disable hover effects on touch devices */
+  .status-panel-dl details:hover {
+    @apply bg-white/5;
+  }
+  
+  .status-panel-dl summary:hover {
+    @apply from-purple-500/20 to-pink-500/20;
+  }
+}
+
+.status-panel-dl summary::-webkit-details-marker {
+  display: none;
+}
+
+.status-panel-dl summary::before {
+  content: '▶';
+  @apply text-purple-300 text-sm;
+  /* Desktop transitions */
+  transition: transform 200ms ease;
+}
+
+/* Mobile: faster transform animation */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .status-panel-dl summary::before {
+    transition: transform 100ms ease;
+  }
+}
+
+.status-panel-dl details[open] summary::before {
+  @apply rotate-90;
+}
+
+.status-panel-dl .content-box {
+  @apply p-4 space-y-2 text-white/80 text-sm leading-relaxed;
+}
+
+.status-panel-dl .content-box p {
+  @apply mb-2 last:mb-0;
+}
+
+.status-panel-dl .content-box strong {
+  @apply text-white/95 font-semibold;
+}

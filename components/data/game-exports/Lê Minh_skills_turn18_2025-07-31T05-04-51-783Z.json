@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "exportedAt": "2025-07-31T05-04-51-783Z",
+    "turn": 18,
+    "category": "skills",
+    "entityCount": 4,
+    "characterName": "Lê Minh",
+    "hasReferenceIds": true
+  },
+  "referenceMapping": {
+    "Phân Giải Hạt Cơ Bản (Sơ Khai)": "REF_SK_SKI_3d7bec48",
+    "Thao Túng Quang Tử (Sơ Khai)": "REF_SK_SKI_19b0f0ae",
+    "Thao Túng Quang Tử (Cải Tiến)": "REF_SK_SKI_31c68f54",
+    "Ẩn Mình Quang Ảnh": "REF_SK_SKI_215c8447"
+  },
+  "entities": {
+    "Phân Giải Hạt Cơ Bản (Sơ Khai)": {
+      "type": "skill",
+      "name": "Phân Giải Hạt Cơ Bản (Sơ Khai)",
+      "description": "Khả năng tác động lên cấu trúc cơ bản của vật chất, khiến vật thể nhỏ phân rã thành hư vô hoặc năng lượng. Chỉ có thể áp dụng lên vật thể phi sinh vật và nhỏ.",
+      "referenceId": "REF_SK_SKI_3d7bec48",
+      "mastery": "Cấp 1",
+      "originalName": "Phân Giải Hạt Cơ Bản (Sơ Khai)",
+      "hanVietName": "Kỹ Năng Phân Giải Hạt Cơ Bản (Sơ Khai)",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Thao Túng Quang Tử (Sơ Khai)": {
+      "type": "skill",
+      "name": "Thao Túng Quang Tử (Sơ Khai)",
+      "description": "Khả năng điều khiển các hạt photon (ánh sáng) ở cấp độ cơ bản, cho phép làm bẻ cong, tập trung hoặc tán xạ ánh sáng trong một phạm vi nhỏ.",
+      "referenceId": "REF_SK_SKI_19b0f0ae",
+      "mastery": "Cấp 1",
+      "originalName": "Thao Túng Quang Tử (Sơ Khai)",
+      "hanVietName": "Kỹ Năng Thao Túng Quang Tử (Sơ Khai)",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Thao Túng Quang Tử (Cải Tiến)": {
+      "type": "skill",
+      "name": "Thao Túng Quang Tử (Cải Tiến)",
+      "description": "Nâng cao khả năng điều khiển các hạt photon, cho phép tạo ra những hình ảnh ba chiều đơn giản từ ánh sáng.",
+      "referenceId": "REF_SK_SKI_31c68f54",
+      "mastery": "Cấp 2",
+      "originalName": "Thao Túng Quang Tử (Cải Tiến)",
+      "hanVietName": "Kỹ Năng Thao Túng Quang Tử (Cải Tiến)",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Ẩn Mình Quang Ảnh": {
+      "type": "skill",
+      "name": "Ẩn Mình Quang Ảnh",
+      "description": "Một kỹ năng phụ sinh ra từ Thao Túng Quang Tử, cho phép người sử dụng bẻ cong và tán xạ ánh sáng xung quanh một phần cơ thể hoặc vật thể nhỏ, tạo ra hiệu ứng mờ ảo hoặc bán vô hình. Đòi hỏi sự tập trung tinh thần cao.",
+      "referenceId": "REF_SK_SKI_215c8447",
+      "mastery": "Sơ Khai",
+      "originalName": "Ẩn Mình Quang Ảnh",
+      "hanVietName": "Kỹ Năng Ẩn Mình Quang Ảnh",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    }
+  }
+}

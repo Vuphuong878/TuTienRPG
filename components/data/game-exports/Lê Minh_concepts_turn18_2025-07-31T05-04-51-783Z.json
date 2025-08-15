@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "exportedAt": "2025-07-31T05-04-51-783Z",
+    "turn": 18,
+    "category": "concepts",
+    "entityCount": 31,
+    "characterName": "Lê Minh",
+    "hasReferenceIds": true
+  },
+  "referenceMapping": {
+    "Hệ Thống Tiền Tệ Hồn Sư": "REF_CO_CON_362fde3a",
+    "Thu Nhập và Chi Tiêu Hồn Sư": "REF_CO_CON_199f1b32",
+    "Tiểu Vũ": "REF_CO_CON_3e679fce",
+    "Thiên Đấu Đế Quốc": "REF_CO_CON_6d33b6a6",
+    "Tinh La Đế Quốc": "REF_CO_CON_3fea1133",
+    "Võ Hồn Thành": "REF_CO_CON_5d486f38",
+    "Tinh Đấu Đại Sâm Lâm": "REF_CO_CON_7119f2a4",
+    "Hải Thần Đảo": "REF_CO_CON_7ced9797",
+    "Võ Hồn": "REF_CO_CON_6b728722",
+    "Hệ Thống Đẳng Cấp Hồn Sư": "REF_CO_CON_755bcd05",
+    "Hồn Hoàn": "REF_CO_CON_645bb492",
+    "Hồn Cốt": "REF_CO_CON_066a022f",
+    "Hồn Linh": "REF_CO_CON_048ebe34",
+    "Văn Hóa và Tập Tục Hồn Sư": "REF_CO_CON_43be16e4",
+    "Tập Tục Đặc Biệt (R18)": "REF_CO_CON_7ccf3c99",
+    "Tà Hồn Sư": "REF_CO_CON_25ceab14",
+    "Hồn Đạo Khí (Giai Đoạn Sơ Khai)": "REF_CO_CON_5698a891",
+    "Truyền Thuyết Nguồn Gốc Võ Hồn": "REF_CO_CON_6fd9df54",
+    "Văn Minh Hồn Sư Cổ Đại": "REF_CO_CON_66a7d885",
+    "Hậu Quả Thần Chiến Cổ Xưa": "REF_CO_CON_724ea4de",
+    "Hồn Thú Hóa Hình": "REF_CO_CON_7a787501",
+    "Song Sinh Võ Hồn": "REF_CO_CON_00197727",
+    "Võ Hồn Chân Thân": "REF_CO_CON_06cf70ef",
+    "Chưởng Khống Hạt Cơ Bản": "REF_CO_CON_61bda27c",
+    "Kỹ Năng Lĩnh Vực": "REF_CO_CON_659d161f",
+    "Hệ Thống Danh Vọng và Quan Hệ Thế Lực": "REF_CO_CON_4bddaeb9",
+    "Biến Dị Võ Hồn Sâu Sắc": "REF_CO_CON_1c7a95c2",
+    "Con Đường Tu Luyện Phi Chính Thống": "REF_CO_CON_14449bd7",
+    "Huyết Hồn Giáo": "REF_CO_CON_5d3637b4",
+    "Nghi Thức Thức Tỉnh Võ Hồn": "REF_CO_CON_518e78ed",
+    "Hư Vô Chi Khởi Nguyên": "REF_CO_CON_69853986"
+  },
+  "entities": {
+    "Hệ Thống Tiền Tệ Hồn Sư": {
+      "type": "concept",
+      "name": "Hệ Thống Tiền Tệ Hồn Sư",
+      "description": "Hệ thống tiền tệ chính trên Đấu La Đại Lục gồm ba loại tiền kim loại với tỷ lệ hối đoái cố định: Đồng Hồn Tệ (giá trị thấp nhất, dùng cho giao dịch nhỏ), Ngân Hồn Tệ (giá trị trung bình, 10 Đồng = 1 Ngân), và Kim Hồn Tệ (giá trị cao nhất, 10 Ngân = 1 Kim, dùng cho giao dịch lớn). Kim Hồn Tệ có sức mua đáng kể, đủ cho một gia đình sinh hoạt vài tháng.",
+      "referenceId": "REF_CO_CON_362fde3a",
+      "originalName": "Hệ Thống Tiền Tệ Hồn Sư",
+      "hanVietName": "Thực Thể Hệ Thống Tiền Tệ Hồn Sư",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Thu Nhập và Chi Tiêu Hồn Sư": {
+      "type": "concept",
+      "name": "Thu Nhập và Chi Tiêu Hồn Sư",
+      "description": "Hồn sư có thể kiếm tiền thông qua phụ cấp từ Võ Hồn Điện/Đế quốc, hoàn thành nhiệm vụ, săn giết Hồn thú, chế tác vật phẩm, thi đấu hồn đấu, hoặc hỗ trợ từ gia tộc/tông môn. Các khoản chi tiêu chính bao gồm tài nguyên tu luyện, trang bị, hồn đạo khí, chi phí săn hồn hoàn, sinh hoạt hàng ngày và mua tình báo.",
+      "referenceId": "REF_CO_CON_199f1b32",
+      "originalName": "Thu Nhập và Chi Tiêu Hồn Sư",
+      "hanVietName": "Thực Thể Thu Nhập và Chi Tiêu Hồn Sư",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Tiểu Vũ": {
+      "type": "concept",
+      "name": "Tiểu Vũ",
+      "description": "Nữ chính và một trong Sử Lai Khắc Thất Quái, là một Nhu Cốt Mị Thỏ mười vạn năm hóa hình. Võ Hồn Nhu Cốt Thỏ (hệ Mẫn công) với hồn kỹ đặc trưng là Yêu Cung, Mị Hoặc, Vô Địch Kim Thân, Dịch Chuyển Tức Thời và Bát Đoạn Suất. Tính cách hoạt bát, thiện lương, cực kỳ tin tưởng và sẵn sàng hy sinh vì Đường Tam. Trong game, Tiểu Vũ sẽ đóng vai trò quan trọng trong cốt truyện và có thể là bạn đồng hành.",
+      "referenceId": "REF_CO_CON_3e679fce",
+      "originalName": "Tiểu Vũ",
+      "hanVietName": "Thực Thể Tiểu Vũ",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Thiên Đấu Đế Quốc": {
+      "type": "concept",
+      "name": "Thiên Đấu Đế Quốc",
+      "description": "Một trong hai đế quốc lớn ở phía bắc đại lục, nổi tiếng với văn hóa hưng thịnh và kinh tế phồn vinh. Dưới sự cai trị của Hoàng thất Tuyết Dạ Đại Đế. Thiên Đấu Đế Quốc có quan hệ phức tạp với Võ Hồn Điện, cuối cùng dẫn đến chiến tranh. Người chơi có thể tương tác với chính quyền và quân đội của đế quốc này.",
+      "referenceId": "REF_CO_CON_6d33b6a6",
+      "originalName": "Thiên Đấu Đế Quốc",
+      "hanVietName": "Thực Thể Thiên Đấu Đế Quốc",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Tinh La Đế Quốc": {
+      "type": "concept",
+      "name": "Tinh La Đế Quốc",
+      "description": "Đế quốc lớn nằm ở phía nam đại lục, sở hữu cương vực bao la và thực lực quân sự hùng hậu. Hoàng thất là gia tộc Đái. Tinh La Đế Quốc duy trì mối quan hệ tương đối độc lập với Võ Hồn Điện. Người chơi có thể tìm kiếm cơ hội hoặc đối đầu với các thế lực tại đây.",
+      "referenceId": "REF_CO_CON_3fea1133",
+      "originalName": "Tinh La Đế Quốc",
+      "hanVietName": "Thực Thể Tinh La Đế Quốc",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Võ Hồn Thành": {
+      "type": "concept",
+      "name": "Võ Hồn Thành",
+      "description": "Tổng bộ của Võ Hồn Điện, nằm ở vị trí trung tâm giữa hai đại đế quốc. Đây là thánh địa và trung tâm quyền lực tối cao của các hồn sư trên Đấu La Đại Lục. Người chơi có thể đến đây để nhận nhiệm vụ, tham gia kiểm tra Hồn sư, hoặc đối đầu với Võ Hồn Điện.",
+      "referenceId": "REF_CO_CON_5d486f38",
+      "originalName": "Võ Hồn Thành",
+      "hanVietName": "Thực Thể Võ Hồn Thành",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Tinh Đấu Đại Sâm Lâm": {
+      "type": "concept",
+      "name": "Tinh Đấu Đại Sâm Lâm",
+      "description": "Khu quần cư Hồn thú lớn nhất Đấu La Đại Lục, với chủng loại và niên hạn Hồn thú cực kỳ phong phú. Vùng lõi có Hồ Sinh Mệnh, nơi cư ngụ của các Hồn thú đỉnh cấp. Đây là địa điểm chính để Hồn sư săn tìm Hồn hoàn và Hồn cốt, nhưng cũng đầy rẫy nguy hiểm.",
+      "referenceId": "REF_CO_CON_7119f2a4",
+      "originalName": "Tinh Đấu Đại Sâm Lâm",
+      "hanVietName": "Thực Thể Tinh Đấu Đại Sâm Lâm",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hải Thần Đảo": {
+      "type": "concept",
+      "name": "Hải Thần Đảo",
+      "description": "Một hòn đảo thần bí ngoài khơi, được canh giữ bởi Ba Tái Tây. Đây là thánh địa truyền thừa của Hải Thần, nơi sinh sống của các hải hồn sư đặc biệt. Người chơi có thể đến đây để tìm kiếm cơ duyên kế thừa thần vị hoặc tu luyện các kỹ năng độc đáo.",
+      "referenceId": "REF_CO_CON_7ced9797",
+      "originalName": "Hải Thần Đảo",
+      "hanVietName": "Thực Thể Hải Thần Đảo",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Võ Hồn": {
+      "type": "concept",
+      "name": "Võ Hồn",
+      "description": "Võ Hồn là căn bản của mỗi Hồn sư, được thức tỉnh lúc sáu tuổi, quyết định phương hướng tu luyện và chiến đấu. Có ba loại chính: Khí Võ Hồn, Thú Võ Hồn và Bản Thể Võ Hồn. Sức mạnh Võ Hồn ban đầu được gọi là tiên thiên hồn lực. Một số Võ Hồn có thể biến dị hoặc tồn tại dưới dạng Song Sinh Võ Hồn, thậm chí có thể thực hiện Võ Hồn dung hợp kỹ.",
+      "referenceId": "REF_CO_CON_6b728722",
+      "originalName": "Võ Hồn",
+      "hanVietName": "Thực Thể Võ Hồn",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hệ Thống Đẳng Cấp Hồn Sư": {
+      "type": "concept",
+      "name": "Hệ Thống Đẳng Cấp Hồn Sư",
+      "description": "Hồn sư tu luyện qua nhiều đẳng cấp: Hồn Sĩ (1-10), Hồn Sư (11-20), Đại Hồn Sư (21-30), Hồn Tôn (31-40), Hồn Tông (41-50), Hồn Vương (51-60), Hồn Đế (61-70), Hồn Thánh (71-80, có Võ Hồn Chân Thân), Hồn Đấu La (81-90), Phong Hào Đấu La (91-99, có phong hào riêng), và cuối cùng là Thần cấp (100, kế thừa thần chỉ). Mỗi 10 cấp cần hấp thụ Hồn hoàn để đột phá.",
+      "referenceId": "REF_CO_CON_755bcd05",
+      "originalName": "Hệ Thống Đẳng Cấp Hồn Sư",
+      "hanVietName": "Thực Thể Hệ Thống Đẳng Cấp Hồn Sư",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hồn Hoàn": {
+      "type": "concept",
+      "name": "Hồn Hoàn",
+      "description": "Hồn Hoàn là vật phẩm quan trọng mà Hồn sư phải săn giết Hồn thú để hấp thụ, nhằm thăng cấp và nhận được Hồn kỹ. Niên hạn Hồn Hoàn quyết định sức mạnh và màu sắc của nó: Trắng (10 năm), Vàng (100 năm), Tím (1000 năm), Đen (10000 năm), Đỏ (10 vạn năm, có thể hiến tế), Vàng kim (1 triệu năm), và Cầu vồng/Thần ban. Có giới hạn hấp thụ cho từng cấp bậc Hồn sư. Hồn thú 10 vạn năm có thể hiến tế Hồn hoàn và Hồn cốt tự nguyện.",
+      "referenceId": "REF_CO_CON_645bb492",
+      "originalName": "Hồn Hoàn",
+      "hanVietName": "Thực Thể Hồn Hoàn",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hồn Cốt": {
+      "type": "concept",
+      "name": "Hồn Cốt",
+      "description": "Hồn Cốt là vật phẩm cực kỳ hiếm, có được khi Hồn thú chết. Chúng chia thành sáu bộ vị chính (đầu, thân, tay, chân). Ngoài ra còn có Ngoại Phụ Hồn Cốt (như Bát Chu Mâu), có thể tiến hóa cùng với Hồn sư. Hồn Cốt cung cấp các hồn kỹ mạnh mẽ và tăng cường thuộc tính cho Hồn sư.",
+      "referenceId": "REF_CO_CON_066a022f",
+      "originalName": "Hồn Cốt",
+      "hanVietName": "Thực Thể Hồn Cốt",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hồn Linh": {
+      "type": "concept",
+      "name": "Hồn Linh",
+      "description": "Hồn Linh là một dạng sinh mệnh thể đặc biệt, linh hồn của Hồn thú tồn tại cộng sinh với Hồn sư, không chỉ cung cấp Hồn hoàn mà còn cùng Hồn sư chiến đấu và tiến hóa. Có Hồn Linh Tự Nhiên (Hồn thú tự nguyện hiến tế) và Hồn Linh Nhân Tạo (do Truyền Linh Tháp phát triển từ linh hồn Hồn thú đã chết). Cấp bậc Hồn Linh được biểu thị bằng màu sắc tương tự Hồn hoàn: Trắng, Vàng, Tím, Đen, Đỏ, Vàng cam, Bạch kim.",
+      "referenceId": "REF_CO_CON_048ebe34",
+      "originalName": "Hồn Linh",
+      "hanVietName": "Thực Thể Hồn Linh",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Văn Hóa và Tập Tục Hồn Sư": {
+      "type": "concept",
+      "name": "Văn Hóa và Tập Tục Hồn Sư",
+      "description": "Đấu La Đại Lục có nhiều ngày lễ và tập tục quan trọng. Các ngày lễ chung bao gồm Ngày Thức Tỉnh Võ Hồn, Lễ hội Bội Thu, và Lễ hội Năm Mới. Trong các tông môn và học viện có Thi đấu định kỳ và Tế tự Võ Hồn đặc biệt. Giới Hồn sư tôn trọng kẻ mạnh, đề cao quan hệ thầy trò, và tuân thủ lễ nghi quyết đấu.",
+      "referenceId": "REF_CO_CON_43be16e4",
+      "originalName": "Văn Hóa và Tập Tục Hồn Sư",
+      "hanVietName": "Thực Thể Văn Hóa và Tập Tục Hồn Sư",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Tập Tục Đặc Biệt (R18)": {
+      "type": "concept",
+      "name": "Tập Tục Đặc Biệt (R18)",
+      "description": "Trong thế giới Đấu La Đại Lục, một số bộ lạc, tà giáo hoặc tầng lớp quý tộc có thể thực hiện các tập tục bí ẩn và cấm kỵ liên quan đến R18. Bao gồm 'hiến tế trinh nữ', 'tu luyện lò đỉnh' để tăng cường sức mạnh, hoặc các 'yến tiệc bí mật' của quý tộc với những hành vi nhạy cảm. Người chơi có thể vô tình hoặc chủ động tiếp cận các tình huống này.",
+      "referenceId": "REF_CO_CON_7ccf3c99",
+      "originalName": "Tập Tục Đặc Biệt (R18)",
+      "hanVietName": "Thực Thể Tập Tục Đặc Biệt (R18)",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Tà Hồn Sư": {
+      "type": "concept",
+      "name": "Tà Hồn Sư",
+      "description": "Tà Hồn sư là những cá nhân bị giới chính thống Đấu La Đại Lục không dung thứ do tu luyện công pháp tà ác (thôn phệ sinh mệnh/linh hồn, huyết tế), sở hữu Võ Hồn tà ác bẩm sinh, hoặc có hành vi tàn nhẫn cực đoan. Họ là kẻ thù chung, bị Võ Hồn Điện, hai đế quốc và các tông môn chính nghĩa truy sát. Người chơi có thể đối đầu hoặc vô tình dính líu đến các tà hồn sư.",
+      "referenceId": "REF_CO_CON_25ceab14",
+      "originalName": "Tà Hồn Sư",
+      "hanVietName": "Thực Thể Tà Hồn Sư",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hồn Đạo Khí (Giai Đoạn Sơ Khai)": {
+      "type": "concept",
+      "name": "Hồn Đạo Khí (Giai Đoạn Sơ Khai)",
+      "description": "Trong giai đoạn 'Đấu La Đại Lục I', công nghệ hồn đạo khí còn rất nguyên thủy. Loại hình phổ biến nhất là Hồn đạo khí trữ vật (như Nhị Thập Tứ Kiều Minh Nguyệt Dạ). Hồn đạo khí tấn công hoặc phòng ngự cực kỳ hiếm và uy lực còn yếu, chưa phổ biến rộng rãi như trong các thời kỳ sau.",
+      "referenceId": "REF_CO_CON_5698a891",
+      "originalName": "Hồn Đạo Khí (Giai Đoạn Sơ Khai)",
+      "hanVietName": "Thực Thể Hồn Đạo Khí (Giai Đoạn Sơ Khai)",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Truyền Thuyết Nguồn Gốc Võ Hồn": {
+      "type": "concept",
+      "name": "Truyền Thuyết Nguồn Gốc Võ Hồn",
+      "description": "Các truyền thuyết về nguồn gốc Võ Hồn trên Đấu La Đại Lục rất đa dạng, có thể là do Thần ban ơn, sự dung hợp giữa con người và hồn thú, hoặc là sự biến dị từ linh khí tự nhiên của thế giới. Những câu chuyện này định hình niềm tin và hiểu biết của Hồn sư về sức mạnh của họ.",
+      "referenceId": "REF_CO_CON_6fd9df54",
+      "originalName": "Truyền Thuyết Nguồn Gốc Võ Hồn",
+      "hanVietName": "Thực Thể Truyền Thuyết Nguồn Gốc Võ Hồn",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Văn Minh Hồn Sư Cổ Đại": {
+      "type": "concept",
+      "name": "Văn Minh Hồn Sư Cổ Đại",
+      "description": "Lịch sử Đấu La Đại Lục ghi nhận sự hưng suy của các nền văn minh hồn sư thượng cổ. Có thể đã tồn tại những đế quốc hồn sư cổ xưa mạnh mẽ hơn nhưng đã suy tàn do thiên tai hoặc nhân họa. Di tích của họ vẫn còn nằm rải rác trên đại lục, chờ đợi người chơi khám phá để tìm kiếm kho báu và bí mật thất truyền.",
+      "referenceId": "REF_CO_CON_66a7d885",
+      "originalName": "Văn Minh Hồn Sư Cổ Đại",
+      "hanVietName": "Thực Thể Văn Minh Hồn Sư Cổ Đại",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hậu Quả Thần Chiến Cổ Xưa": {
+      "type": "concept",
+      "name": "Hậu Quả Thần Chiến Cổ Xưa",
+      "description": "Các trận Thần chiến cổ xưa đã để lại những di chứng sâu sắc trên Đấu La Đại Lục. Có thể là các mảnh vỡ thần khí, ý chí tà thần bị phong ấn, hoặc những thay đổi lớn về địa hình. Những tàn tích này có thể là mục tiêu để người chơi tìm kiếm sức mạnh, đối mặt với nguy hiểm, hoặc khám phá thêm về lịch sử thần linh.",
+      "referenceId": "REF_CO_CON_724ea4de",
+      "originalName": "Hậu Quả Thần Chiến Cổ Xưa",
+      "hanVietName": "Thực Thể Hậu Quả Thần Chiến Cổ Xưa",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hồn Thú Hóa Hình": {
+      "type": "concept",
+      "name": "Hồn Thú Hóa Hình",
+      "description": "Là năng lực đặc biệt của Hồn thú đạt tu vi mười vạn năm trở lên, cho phép chúng hóa thành hình người và tu luyện lại từ đầu như con người. Động cơ có thể là đột phá bình cảnh hoặc trốn tránh đại nạn. Giai đoạn đầu thực lực yếu ớt và một khi thân phận bị phát hiện, chúng sẽ trở thành mục tiêu săn giết. Ví dụ điển hình là Tiểu Vũ và A Ngân.",
+      "referenceId": "REF_CO_CON_7a787501",
+      "originalName": "Hồn Thú Hóa Hình",
+      "hanVietName": "Thực Thể Hồn Thú Hóa Hình",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Song Sinh Võ Hồn": {
+      "type": "concept",
+      "name": "Song Sinh Võ Hồn",
+      "description": "Một thiên phú cực kỳ hiếm, cho phép Hồn sư sở hữu đồng thời hai Võ Hồn độc lập, có thể gắn hồn hoàn và sử dụng hồn kỹ cho cả hai. Ưu thế là sở hữu số lượng hồn kỹ gấp đôi và phong cách chiến đấu đa dạng. Tuy nhiên, rủi ro lớn nhất là xung đột năng lượng giữa hai Võ Hồn khi tu luyện. Đường Tam và Bỉ Bỉ Đông là những người sở hữu Song Sinh Võ Hồn nổi tiếng.",
+      "referenceId": "REF_CO_CON_00197727",
+      "originalName": "Song Sinh Võ Hồn",
+      "hanVietName": "Thực Thể Song Sinh Võ Hồn",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Võ Hồn Chân Thân": {
+      "type": "concept",
+      "name": "Võ Hồn Chân Thân",
+      "description": "Hồn kỹ thứ bảy, năng lực mạnh mẽ mà Hồn Thánh cấp 70 trở lên có được, đại diện cho sự dung hợp cực cao giữa Hồn sư và Võ Hồn. Khi kích hoạt, Thú Võ Hồn sẽ thú hóa, Khí Võ Hồn thực thể/khổng lồ hóa, tăng cường mạnh mẽ toàn bộ thuộc tính và uy lực hồn kỹ. Đây là át chủ bài chiến đấu, nhưng tiêu hao hồn lực cực lớn và không thể duy trì lâu.",
+      "referenceId": "REF_CO_CON_06cf70ef",
+      "originalName": "Võ Hồn Chân Thân",
+      "hanVietName": "Thực Thể Võ Hồn Chân Thân",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Chưởng Khống Hạt Cơ Bản": {
+      "type": "concept",
+      "name": "Chưởng Khống Hạt Cơ Bản",
+      "description": "Đây là một năng lực giả định ở cấp độ thần thánh, cho phép người sở hữu sáng tạo và điều khiển các hạt cơ bản cấu thành vạn vật. Với năng lực này, có thể kiến tạo, phá hủy và biến đổi vật chất, thao túng các lực cơ bản như trọng lực, điện từ, hoặc thậm chí thay đổi khối lượng thông qua trường Higgs. Ở mức độ cao hơn, nó có thể dùng để sáng tạo và thay đổi sự sống, chữa lành bệnh tật, đảo ngược lão hóa hoặc ban tặng khả năng siêu nhiên, khiến cái chết chỉ là một lựa chọn. Đây là sức mạnh tối thượng, có thể phá vỡ mọi quy tắc thông thường.",
+      "referenceId": "REF_CO_CON_61bda27c",
+      "originalName": "Chưởng Khống Hạt Cơ Bản",
+      "hanVietName": "Thực Thể Chưởng Khống Hạt Cơ Bản",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Kỹ Năng Lĩnh Vực": {
+      "type": "concept",
+      "name": "Kỹ Năng Lĩnh Vực",
+      "description": "Lĩnh vực là một năng lực khống chế phạm vi mạnh mẽ, được Hồn sư từ cấp Hồn Thánh trở lên lĩnh ngộ, thể hiện sự thấu hiểu Võ Hồn của họ. Nó ảnh hưởng quy tắc trong phạm vi, tăng cường cho bản thân/đồng minh, và suy yếu/áp chế kẻ địch. Các lĩnh vực nổi bật bao gồm Sát Thần Lĩnh Vực (tăng tấn công, suy yếu địch), Lam Ngân Lĩnh Vực (điều khiển thực vật), Thiên Sứ Lĩnh Vực (thanh tẩy), Tử Vong Lĩnh Vực (suy yếu sinh lực), La Sát Lĩnh Vực (nuốt năng lượng), và Hải Thần Lĩnh Vực (kiểm soát đại dương).",
+      "referenceId": "REF_CO_CON_659d161f",
+      "originalName": "Kỹ Năng Lĩnh Vực",
+      "hanVietName": "Thực Thể Kỹ Năng Lĩnh Vực",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hệ Thống Danh Vọng và Quan Hệ Thế Lực": {
+      "type": "concept",
+      "name": "Hệ Thống Danh Vọng và Quan Hệ Thế Lực",
+      "description": "Mọi hành động của người chơi sẽ tích lũy 'Danh vọng', ảnh hưởng đến thái độ của các thế lực lớn như Võ Hồn Điện, Thiên Đấu Đế Quốc, Tinh La Đế Quốc, các tông môn và học viện. Các cấp độ Danh vọng từ Thù địch đến Sùng bái. Việc hoàn thành/phá hoại nhiệm vụ, giúp đỡ/tấn công thành viên phe phái sẽ làm thay đổi danh vọng, từ đó mở khóa/đóng lại cốt truyện, ảnh hưởng tương tác NPC và lợi ích kinh tế/trang bị.",
+      "referenceId": "REF_CO_CON_4bddaeb9",
+      "originalName": "Hệ Thống Danh Vọng và Quan Hệ Thế Lực",
+      "hanVietName": "Thực Thể Hệ Thống Danh Vọng và Quan Hệ Thế Lực",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Biến Dị Võ Hồn Sâu Sắc": {
+      "type": "concept",
+      "name": "Biến Dị Võ Hồn Sâu Sắc",
+      "description": "Bên cạnh biến dị thông thường, Võ Hồn còn có thể trải qua các biến dị sâu sắc hơn: Biến dị Dung hợp (Võ Hồn cha mẹ hợp nhất), Biến dị Hoàn cảnh (ảnh hưởng bởi môi trường cực đoan), Biến dị Nghịch hướng (trái ngược thuộc tính gốc), hoặc Thức tỉnh Thứ cấp (mở khóa hình thái và năng lực mới sau một lần thức tỉnh nữa). Những biến dị này mang lại tiềm năng phát triển độc đáo cho Hồn sư.",
+      "referenceId": "REF_CO_CON_1c7a95c2",
+      "originalName": "Biến Dị Võ Hồn Sâu Sắc",
+      "hanVietName": "Thực Thể Biến Dị Võ Hồn Sâu Sắc",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Con Đường Tu Luyện Phi Chính Thống": {
+      "type": "concept",
+      "name": "Con Đường Tu Luyện Phi Chính Thống",
+      "description": "Ngoài phương pháp tu luyện Hồn sư truyền thống, còn tồn tại các con đường phi chính thống. Bao gồm Tự sáng tạo Hồn kỹ (phát triển hồn kỹ của riêng mình), Hồn sư Luyện thể (tập trung rèn luyện thể chất đến cực hạn thay vì chỉ hồn lực), và Hồn sư Khế ước (ký kết khế ước với hồn thú để cùng chiến đấu thay vì săn giết chúng lấy hồn hoàn). Những con đường này mang lại lối chơi và sức mạnh khác biệt.",
+      "referenceId": "REF_CO_CON_14449bd7",
+      "originalName": "Con Đường Tu Luyện Phi Chính Thống",
+      "hanVietName": "Thực Thể Con Đường Tu Luyện Phi Chính Thống",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Huyết Hồn Giáo": {
+      "type": "concept",
+      "name": "Huyết Hồn Giáo",
+      "description": "Một giáo phái tà hồn sư cổ xưa và cực kỳ bí mật, thờ phụng 'Huyết Thần'. Chúng tin rằng có thể đạt được sự bất tử và sức mạnh tuyệt đối thông qua các nghi thức huyết tế tàn bạo, thường gây ra các vụ mất tích hàng loạt để thu thập vật tế. Huyết Hồn Giáo do một Giáo chủ bí ẩn lãnh đạo cùng Tứ Đại Huyết Sứ cấp Phong Hào Đấu La và các Huyết Tế Sư. Chúng có hứng thú đặc biệt với những hồn sư có huyết mạch đặc biệt.",
+      "referenceId": "REF_CO_CON_5d3637b4",
+      "originalName": "Huyết Hồn Giáo",
+      "hanVietName": "Thực Thể Huyết Hồn Giáo",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Nghi Thức Thức Tỉnh Võ Hồn": {
+      "type": "concept",
+      "referenceId": "REF_CO_CON_518e78ed",
+      "name": "Nghi Thức Thức Tỉnh Võ Hồn",
+      "description": "Một nghi lễ quan trọng diễn ra khi trẻ em tròn sáu tuổi, do Võ Hồn Điện tổ chức. Trẻ em sẽ đặt tay lên quả cầu pha lê và đứng giữa sáu viên đá đen để kiểm tra tiềm năng hồn lực và thức tỉnh Võ Hồn. Kết quả sẽ quyết định liệu chúng có thể trở thành Hồn Sư hay không.",
+      "originalName": "Nghi Thức Thức Tỉnh Võ Hồn",
+      "hanVietName": "Thực Thể Nghi Thức Thức Tỉnh Võ Hồn",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    },
+    "Hư Vô Chi Khởi Nguyên": {
+      "type": "concept",
+      "referenceId": "REF_CO_CON_69853986",
+      "name": "Hư Vô Chi Khởi Nguyên",
+      "description": "Một loại Võ Hồn cực kỳ hiếm và bí ẩn, dường như có khả năng liên kết với các hạt cơ bản và bản chất của không gian, có tiềm năng phát triển thành khả năng Chưởng Khống Hạt Cơ Bản.",
+      "originalName": "Hư Vô Chi Khởi Nguyên",
+      "hanVietName": "Thực Thể Hư Vô Chi Khởi Nguyên",
+      "exportedAt": 1753938291783,
+      "exportTurn": 13
+    }
+  }
+}
