@@ -3,6 +3,17 @@ import type { ChangelogEntry } from '../types.ts';
 
 export const CHANGELOG_DATA: ChangelogEntry[] = [
   {
+    version: '1.0.0',
+    date: '2025-08-16',
+    changes: [
+      { type: 'improvement', text: 'Bổ sung hệ thống nội tâm ẩn (5 lăng kính) cho NPC khi cập nhật tình cảm, đảm bảo NPC phản ứng logic, không máy móc.' },
+      { type: 'improvement', text: 'Triển khai cơ chế NPC chủ động với hai giai đoạn hành động: phản ứng kết quả và hành động chủ động của NPC/thế giới.' },
+      { type: 'improvement', text: 'Bổ sung quy tắc quản lý trạng thái, nhiệm vụ, ký ức, thực thể, vật phẩm, đồng hành, và các thẻ lệnh liên quan vào system instruction.' },
+      { type: 'improvement', text: 'Thêm quy tắc cuối cùng: khối lựa chọn luôn là nội dung cuối cùng trong phản hồi, không có thẻ lệnh hay văn bản sau.' },
+      { type: 'technical', text: 'Kiểm tra và đồng bộ toàn bộ từ khóa, thẻ lệnh, logic với codespace hiện tại, tránh trùng lặp và xung đột.' }
+    ]
+  },
+  {
     version: '1.41.0',
     date: '2025-08-11',
     changes: [
@@ -547,21 +558,21 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.10.2',
+    version: '1.10.0',
     date: '2024-08-06',
     changes: [
       { type: 'improvement', text: 'Giao diện trên di động được cải thiện bằng cách ẩn các tùy chọn Phông chữ và Cỡ chữ để có giao diện gọn gàng hơn.' },
     ],
   },
   {
-    version: '1.10.1',
+    version: '0.1.1',
     date: '2024-08-05',
     changes: [
       { type: 'fix', text: 'Sửa lỗi import thiếu trong component Bản Đồ (MapModal), gây ra sự cố hiển thị và tương tác.' },
     ],
   },
   {
-    version: '1.10.0',
+    version: '0.1.0',
     date: '2024-08-05',
     changes: [
       { type: 'feature', text: 'Thêm Bản Đồ Thế Giới tương tác, cho phép người chơi xem các địa điểm đã khám phá và vị trí hiện tại của nhân vật.' },
@@ -571,7 +582,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.9.0',
+    version: '0.0.9',
     date: '2024-08-04',
     changes: [
       { type: 'improvement', text: 'Tái cấu trúc hoàn toàn giao diện trên di động để tối ưu hóa không gian hiển thị và trải nghiệm người dùng.' },
@@ -581,7 +592,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.8.0',
+    version: '0.0.8',
     date: '2024-08-03',
     changes: [
       { type: 'improvement', text: 'Nâng cấp AI Quản Trò (GM) để tạo ra một thế giới sống động hơn, nơi các NPC có mục tiêu, động cơ và mối quan hệ riêng.' },
@@ -591,7 +602,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.7.0',
+    version: '0.0.7',
     date: '2024-08-02',
     changes: [
       { type: 'feature', text: 'Thêm hệ thống Thời Gian trong game, AI tự động tính toán và hiển thị thời gian đã trôi qua.' },
@@ -601,7 +612,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.6.0',
+    version: '0.0.6',
     date: '2024-08-01',
     changes: [
       { type: 'feature', text: 'Thêm nút "Thông tin" hiển thị bảng thông tin chi tiết của nhân vật (chỉ số, kỹ năng, trạng thái).' },
@@ -610,7 +621,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.5.0',
+    version: '0.0.5',
     date: '2024-07-31',
     changes: [
       { type: 'improvement', text: 'AI sẽ không còn hiển thị tỷ lệ thành công, rủi ro, và hậu quả trong các lựa chọn hành động, giúp tăng tính bất ngờ và nhập vai.' },
@@ -619,7 +630,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.4.0',
+    version: '0.0.4',
     date: '2024-07-30',
     changes: [
       { type: 'feature', text: 'Chức năng "Bắt Đầu Lại" giờ sẽ tái tạo thế giới với cùng bối cảnh và luật lệ ban đầu.' },
@@ -628,7 +639,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.3.0',
+    version: '0.0.3',
     date: '2024-07-29',
     changes: [
       { type: 'feature', text: 'Tối ưu hóa bảng thông tin NPC, hiển thị đầy đủ thông tin về Kỹ Năng, Tuổi Tác và Dung Mạo.' },
@@ -638,7 +649,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.2.0',
+    version: '0.0.2',
     date: '2024-07-28',
     changes: [
       { type: 'feature', text: 'Triển khai hệ thống RAG (Retrieval-Augmented Generation) để tối ưu hóa prompt và giảm token.' },
@@ -649,7 +660,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
     {
-    version: '1.1.0',
+    version: '0.0.1',
     date: '2024-07-25',
     changes: [
       { type: 'feature', text: 'Thêm hệ thống "Biên Niên Sử" (Chronicle) để AI tự động tóm tắt các sự kiện quan trọng.' },
@@ -659,7 +670,7 @@ export const CHANGELOG_DATA: ChangelogEntry[] = [
     ],
   },
   {
-    version: '1.0.0',
+    version: '0.0.1',
     date: '2024-07-20',
     changes: [
       { type: 'feature', text: 'Phát hành phiên bản đầu tiên của Nhập Vai A.I Simulator.' },
