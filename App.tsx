@@ -225,7 +225,7 @@ Chủ động tạo quest mới và cập nhật quest hiện tại:
 **1. LỰA CHỌN HÀNH ĐỘNG:**
 - Tạo 4-6 lựa chọn đa dạng: hành động, xã hội, thăm dò, chiến đấu, nsfw (nếu được bật)
 - Tận dụng kỹ năng và vật phẩm của nhân vật
-- Bắt buộc các lựa chọn có lựa chọn rủi ro, mô tả ngắn tỷ lệ thành công (Cao, Trung Bình, Thấp, Rất Thấp).
+- Bắt buộc các lựa chọn có lựa chọn rủi ro, mô tả ngắn rủi ro (Cao, Trung Bình, Thấp, Rất Thấp).
 - TUYỆT ĐỐI không đưa ra lại lựa chọn đã được chọn trước đó.
 - Lựa chọn Bắt Buộc phải phù hợp thiết lập nhân vật của người chơi trừ các lựa chọn "chiến đấu" và phản ánh tính cách hoặc mục tiêu nhân vật,
 
