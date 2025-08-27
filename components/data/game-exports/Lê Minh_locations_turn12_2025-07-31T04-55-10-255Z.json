@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "exportedAt": "2025-07-31T04-55-10-255Z",
+    "turn": 12,
+    "category": "locations",
+    "entityCount": 2,
+    "characterName": "Lê Minh",
+    "hasReferenceIds": true
+  },
+  "referenceMapping": {
+    "Thánh Hồn Thôn": "REF_LO_LOC_4480161b",
+    "Học viện Nặc Đinh": "REF_LO_LOC_69677a38"
+  },
+  "entities": {
+    "Thánh Hồn Thôn": {
+      "type": "location",
+      "referenceId": "REF_LO_LOC_4480161b",
+      "name": "Thánh Hồn Thôn",
+      "description": "Một thôn làng nhỏ bé, yên bình, nằm sâu trong Thiên Đấu Đế Quốc, nổi tiếng là nơi xuất thân của nhiều Hồn Sư xuất chúng. Có một Võ Hồn Điện Phân Điện nhỏ.",
+      "originalName": "Thánh Hồn Thôn",
+      "hanVietName": "Địa Điểm Thánh Hồn Thôn",
+      "exportedAt": 1753937710255,
+      "exportTurn": 7
+    },
+    "Học viện Nặc Đinh": {
+      "type": "location",
+      "referenceId": "REF_LO_LOC_69677a38",
+      "name": "Học viện Nặc Đinh",
+      "description": "Một học viện hồn sư sơ cấp nằm ở thành Nặc Đinh, chuyên đào tạo các hồn sư trẻ tuổi từ cấp thấp. Nơi đây có cơ sở vật chất đơn giản nhưng là bước khởi đầu quan trọng cho nhiều hồn sư tương lai, là nơi các hồn sư không có gia thế dựa vào để tu luyện.",
+      "originalName": "Học viện Nặc Đinh",
+      "hanVietName": "Địa Điểm Học viện Nặc Đinh",
+      "exportedAt": 1753937710255,
+      "exportTurn": 7
+    }
+  }
+}

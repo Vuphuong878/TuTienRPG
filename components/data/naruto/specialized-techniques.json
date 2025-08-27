@@ -1,0 +1,419 @@
+{
+  "specialized_categories": {
+    "sage_techniques": {
+      "name": "Tiên Thuật",
+      "description": "Kỹ thuật sử dụng năng lượng tự nhiên",
+      "requirements": {
+        "natural_energy_absorption": "Hấp thụ năng lượng tự nhiên",
+        "perfect_balance": "Cân bằng hoàn hảo chakra thể chất, tinh thần và tự nhiên",
+        "specialized_training": "Huấn luyện đặc biệt"
+      },
+      "modes": {
+        "toad_sage_mode": {
+          "id": "toad_sage_mode",
+          "name": "Cóc Tiên Nhân Mô Thức",
+          "location": "Mount_Myoboku",
+          "masters": ["Jiraiya", "Naruto", "Minato"],
+          "abilities": [
+            "enhanced_physical_abilities",
+            "natural_energy_attacks",
+            "sage_art_techniques",
+            "enhanced_perception"
+          ],
+          "techniques": {
+            "senpou_odama_rasengan": {
+              "name": "Tiên Pháp: Đại Ngọc Xoáy Nguyên Hoàn",
+              "description": "Rasengan khổng lồ được tăng cường bởi năng lượng tự nhiên"
+            },
+            "senpou_goemon": {
+              "name": "Tiên Pháp: Ngũ Hữu Môn",
+              "description": "Kết hợp dầu cóc, lửa và gió tạo thành tấn công hủy diệt"
+            }
+          },
+          "time_limit": "Limited_duration",
+          "risks": "Turn_to_stone_if_fail"
+        },
+        "snake_sage_mode": {
+          "id": "snake_sage_mode",
+          "name": "Xà Tiên Nhân Mô Thức",
+          "location": "Ryuuchi_Cave",
+          "masters": ["Kabuto"],
+          "abilities": [
+            "enhanced_healing",
+            "liquid_form_techniques",
+            "sound_based_attacks",
+            "sensory_enhancement"
+          ],
+          "special_features": [
+            "Partial_transformation_possible",
+            "Enhanced_medical_ninjutsu"
+          ]
+        },
+        "slug_sage_mode": {
+          "id": "slug_sage_mode",
+          "name": "Sên Tiên Nhân Mô Thức",
+          "location": "Shikkotsu_Forest",
+          "masters": ["Tsunade"],
+          "abilities": [
+            "ultimate_healing",
+            "acid_techniques",
+            "slug_summoning",
+            "division_abilities"
+          ]
+        },
+        "six_paths_sage_mode": {
+          "id": "six_paths_sage_mode",
+          "name": "Lục Đạo Tiên Nhân Mô Thức",
+          "origin": "Sage_of_Six_Paths",
+          "masters": ["Hagoromo", "Naruto"],
+          "abilities": [
+            "truth_seeking_orbs",
+            "flight_capability",
+            "enhanced_sensory",
+            "healing_without_hand_seals",
+            "resistance_to_ninjutsu"
+          ],
+          "ultimate_power": "Creation_and_destruction_at_molecular_level"
+        }
+      }
+    },
+    "jinchuuriki_techniques": {
+      "name": "Nhân Trụ Lực Thuật",
+      "description": "Kỹ thuật của những người chứa vĩ thú",
+      "chakra_modes": {
+        "version_1": {
+          "name": "Phiên Bản 1",
+          "description": "Chakra đỏ bao quanh cơ thể, tăng sức mạnh cơ bản",
+          "abilities": ["enhanced_strength", "increased_speed", "rapid_healing"],
+          "risks": ["mental_influence", "chakra_burns"]
+        },
+        "version_2": {
+          "name": "Phiên Bản 2", 
+          "description": "Hình dạng mini của vĩ thú, sức mạnh cực lớn",
+          "abilities": ["bijuu_dama_preparation", "massive_power_boost"],
+          "risks": ["complete_transformation", "loss_of_consciousness"]
+        },
+        "full_transformation": {
+          "name": "Hoàn Toàn Biến Hóa",
+          "description": "Biến thành vĩ thú hoàn toàn",
+          "power": "Maximum_bijuu_power",
+          "risk": "Death_or_permanent_control_loss"
+        },
+        "chakra_mode": {
+          "name": "Chakra Mô Thức",
+          "description": "Hợp tác hoàn hảo với vĩ thú",
+          "abilities": [
+            "bijuu_dama_mastery",
+            "shared_consciousness",
+            "enhanced_sensory",
+            "chakra_arms"
+          ],
+          "masters": ["Naruto", "Bee"]
+        }
+      },
+      "techniques": {
+        "bijuu_dama": {
+          "id": "bijuu_dama",
+          "name": "Vĩ Thú Ngọc",
+          "description": "Quả cầu chakra có sức phá hủy khủng khiếp",
+          "power_level": "City_destruction",
+          "users": ["All_tailed_beasts", "Perfect_jinchuuriki"]
+        },
+        "partial_transformation": {
+          "id": "partial_transformation",
+          "name": "Cục Bộ Biến Hóa",
+          "description": "Biến hóa một phần cơ thể thành vĩ thú",
+          "examples": ["chakra_arms", "tails", "claws"],
+          "users": ["Naruto", "Bee"]
+        }
+      }
+    },
+    "space_time_ninjutsu": {
+      "name": "Thời Không Nhẫn Thuật",
+      "description": "Kỹ thuật thao túng không gian và thời gian",
+      "techniques": {
+        "hiraishin_no_jutsu": {
+          "id": "hiraishin_no_jutsu",
+          "name": "Phi Lôi Thần Thuật",
+          "type": "Space_teleportation",
+          "description": "Dịch chuyển tức thời đến vị trí có dấu hiệu",
+          "users": ["Minato", "Tobirama"],
+          "requirements": ["Special_kunai_or_marks", "Incredible_chakra_control"],
+          "variations": {
+            "hiraishin_level_2": {
+              "name": "Phi Lôi Thần - Cấp 2",
+              "description": "Có thể dịch chuyển người khác và vật thể lớn"
+            }
+          }
+        },
+        "kamui": {
+          "id": "kamui",
+          "name": "Thần Uy",
+          "type": "Dimensional_technique",
+          "description": "Gửi vật thể vào chiều không gian khác",
+          "users": ["Obito", "Kakashi"],
+          "variations": {
+            "long_range_kamui": {
+              "name": "Tầm Xa Thần Uy",
+              "description": "Gửi mục tiêu từ xa vào chiều khác"
+            },
+            "short_range_kamui": {
+              "name": "Tầm Gần Thần Uy", 
+              "description": "Làm cho cơ thể vô hình bằng cách gửi vào chiều khác"
+            }
+          }
+        },
+        "yomotsu_hirasaka": {
+          "id": "yomotsu_hirasaka",
+          "name": "Hoàng Tuyền Tỷ Lượng Bản",
+          "type": "Portal_creation",
+          "description": "Tạo cổng kết nối các chiều không gian",
+          "users": ["Kaguya", "Sasuke"],
+          "ability": "Travel_between_dimensions"
+        }
+      }
+    },
+    "forbidden_techniques": {
+      "name": "Cấm Thuật",
+      "description": "Những kỹ thuật bị cấm vì nguy hiểm",
+      "categories": {
+        "death_techniques": {
+          "name": "Tử Vong Thuật",
+          "techniques": {
+            "edo_tensei": {
+              "id": "edo_tensei",
+              "name": "Uế Thổ Chuyển Sinh",
+              "description": "Hồi sinh người chết bằng tế phẩm sống",
+              "cost": "Living_sacrifice",
+              "users": ["Tobirama", "Orochimaru", "Kabuto"],
+              "banned_reason": "Violates_natural_order"
+            },
+            "shiki_fuujin": {
+              "id": "shiki_fuujin",
+              "name": "Thi Quỷ Phong Tận",
+              "description": "Triệu hồi Tử Thần để phong ấn",
+              "cost": "User_soul",
+              "users": ["Minato", "Hiruzen"],
+              "banned_reason": "Guarantees_user_death"
+            }
+          }
+        },
+        "mass_destruction": {
+          "name": "Hủy Diệt Hàng Loạt",
+          "techniques": {
+            "tandem_paper_bombs": {
+              "id": "tandem_paper_bombs",
+              "name": "Liên Hoàn Khởi Bạo Phù",
+              "description": "Vô số phù nổ liên hoàn vô hạn",
+              "users": ["Tobirama"],
+              "banned_reason": "Infinite_destruction_potential"
+            }
+          }
+        },
+        "mind_control": {
+          "name": "Điều Khiển Tâm Trí",
+          "techniques": {
+            "kotoamatsukami": {
+              "id": "kotoamatsukami",
+              "name": "Biệt Thiên Thần",
+              "description": "Thay đổi ý chí mà không bị phát hiện",
+              "users": ["Shisui"],
+              "banned_reason": "Perfect_mind_control"
+            }
+          }
+        }
+      }
+    },
+    "clan_secret_techniques": {
+      "name": "Gia Tộc Bí Thuật",
+      "description": "Kỹ thuật bí mật của các gia tộc",
+      "clans": {
+        "akimichi": {
+          "name": "Akimichi",
+          "techniques": {
+            "baika_no_jutsu": {
+              "name": "Bội Hóa Thuật",
+              "description": "Phóng to cơ thể hoặc bộ phận cơ thể"
+            },
+            "nikudan_sensha": {
+              "name": "Nhục Đạn Chiến Xa",
+              "description": "Cuộn tròn thành quả cầu khổng lồ lăn tấn công"
+            },
+            "chou_baika_no_jutsu": {
+              "name": "Siêu Bội Hóa Thuật",
+              "description": "Phiên bản cực mạnh của Baika no Jutsu"
+            }
+          },
+          "secret_pills": {
+            "horengan": {
+              "name": "Binh Lương Hoàn",
+              "effect": "Tăng chakra, ít tác dụng phụ"
+            },
+            "curry_pill": {
+              "name": "Cà Ri Hoàn",
+              "effect": "Tăng sức mạnh đáng kể, tác dụng phụ trung bình"
+            },
+            "red_pill": {
+              "name": "Đỏ Hoàn",
+              "effect": "Sức mạnh khủng khiếp, có thể gây chết"
+            }
+          }
+        },
+        "aburame": {
+          "name": "Aburame",
+          "techniques": {
+            "kikaichuu_no_jutsu": {
+              "name": "Ký Hoại Trùng Thuật",
+              "description": "Sử dụng côn trùng ăn chakra để tấn công"
+            },
+            "mushi_dama": {
+              "name": "Trùng Ngọc",
+              "description": "Tạo quả cầu côn trùng tấn công"
+            }
+          },
+          "insects": {
+            "kikaichuu": {
+              "name": "Ký Hoại Trùng",
+              "ability": "Ăn chakra của đối thủ"
+            },
+            "kidaichuu": {
+              "name": "Ký Đại Trùng", 
+              "ability": "Côn trùng khổng lồ với sức mạnh lớn"
+            }
+          }
+        },
+        "inuzuka": {
+          "name": "Inuzuka",
+          "techniques": {
+            "shikyaku_no_jutsu": {
+              "name": "Tứ Cước Thuật",
+              "description": "Di chuyển bằng bốn chân như động vật"
+            },
+            "jinjuu_kongou_henge": {
+              "name": "Nhân Thú Kim Cương Biến Hóa",
+              "description": "Biến hóa kết hợp với chó thành sói khổng lồ"
+            }
+          },
+          "partnership": "Ninken_combat_dogs"
+        }
+      }
+    },
+    "summoning_contracts": {
+      "name": "Thông Linh Hợp Đồng",
+      "description": "Hợp đồng với các loài động vật",
+      "contracts": {
+        "toads": {
+          "name": "Cóc",
+          "location": "Mount_Myoboku",
+          "contractors": ["Jiraiya", "Naruto", "Minato"],
+          "notable_summons": {
+            "gamabunta": {
+              "name": "Cóc Văn Thái",
+              "title": "Boss_of_toads",
+              "abilities": ["Oil_techniques", "Sword_combat", "Huge_size"]
+            },
+            "gamaken": {
+              "name": "Cóc Kiến",
+              "abilities": ["Weapon_mastery", "Shield_techniques"]
+            },
+            "fukasaku_shima": {
+              "name": "Thâm Tác & Chí Ma",
+              "abilities": ["Sage_training", "Sound_genjutsu"]
+            }
+          }
+        },
+        "snakes": {
+          "name": "Xà",
+          "location": "Ryuuchi_Cave",
+          "contractors": ["Orochimaru", "Sasuke", "Kabuto"],
+          "notable_summons": {
+            "manda": {
+              "name": "Vạn Xà",
+              "title": "Boss_of_snakes",
+              "abilities": ["Huge_size", "Underground_movement", "Venom"]
+            },
+            "aoda": {
+              "name": "Thanh Đại Xà",
+              "abilities": ["Sage_mode_compatible", "High_intelligence"]
+            }
+          }
+        },
+        "slugs": {
+          "name": "Sên",
+          "location": "Shikkotsu_Forest", 
+          "contractors": ["Tsunade", "Sakura"],
+          "notable_summons": {
+            "katsuyu": {
+              "name": "Hoạt Dũ",
+              "title": "Boss_of_slugs",
+              "abilities": ["Healing", "Acid_techniques", "Division", "Communication"]
+            }
+          }
+        },
+        "hawks": {
+          "name": "Diều Hâu",
+          "contractors": ["Sasuke"],
+          "notable_summons": {
+            "garuda": {
+              "name": "Ca Lâu La",
+              "abilities": ["High_speed_flight", "Sharp_talons"]
+            }
+          }
+        },
+        "dogs": {
+          "name": "Chó",
+          "contractors": ["Kakashi", "Inuzuka_clan"],
+          "notable_summons": {
+            "pakkun": {
+              "name": "Pakkun",
+              "abilities": ["Tracking", "Intelligence", "Communication"]
+            }
+          }
+        }
+      }
+    },
+    "weapon_techniques": {
+      "name": "Vũ Khí Thuật",
+      "categories": {
+        "sword_techniques": {
+          "name": "Kiếm Thuật",
+          "styles": {
+            "seven_swords_of_mist": {
+              "name": "Vụ Ẩn Thất Đao",
+              "swords": {
+                "samehada": {
+                  "name": "Cá Mập Cơ",
+                  "wielder": "Kisame",
+                  "ability": "Chakra_absorption"
+                },
+                "kubikiribocho": {
+                  "name": "Phá Thủ Đao",
+                  "wielder": "Zabuza",
+                  "ability": "Self_repair_with_blood"
+                },
+                "nuibari": {
+                  "name": "Phùng Kim",
+                  "wielder": "Kushimaru",
+                  "ability": "Sewing_enemies_together"
+                }
+              }
+            }
+          }
+        },
+        "projectile_techniques": {
+          "name": "Phi Đạo Thuật",
+          "techniques": {
+            "shadow_shuriken": {
+              "name": "Ảnh Thủ Lý Kiếm",
+              "description": "Ẩn shuriken thứ hai trong bóng của shuriken đầu"
+            },
+            "manipulated_shuriken": {
+              "name": "Thao Túng Thủ Lý Kiếm",
+              "description": "Điều khiển shuriken bằng dây thép"
+            }
+          }
+        }
+      }
+    }
+  }
+}
