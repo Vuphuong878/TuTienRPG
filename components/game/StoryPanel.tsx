@@ -5,7 +5,6 @@ import { OptimizedInteractiveText } from '../OptimizedInteractiveText';
 import { StatusPanelContent } from './StatusPanelContent';
 import { useOptimizedScroll } from '../hooks/useOptimizedScroll';
 import { isHTMLContent } from '../utils/htmlParser';
-import { StoryImage } from '../StoryImage';
 import type { KnownEntities } from '../types';
 
 interface VirtualItem {
@@ -30,11 +29,6 @@ interface StoryPanelProps {
     knownEntities: KnownEntities;
     onEntityClick: (entityName: string) => void;
     className?: string;
-    // Image generation props
-    isAutoImageEnabled?: boolean;
-    onToggleAutoImage?: () => void;
-    pcName?: string;
-    gameHistoryLength?: number;
 }
 
 const ITEM_OVERSCAN = 5;

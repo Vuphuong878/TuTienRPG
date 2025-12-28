@@ -45,7 +45,6 @@ import { EntityExportManager } from './utils/EntityExportManager';
 import { useDebouncedCallback } from './hooks/useDebounce.ts';
 import { OptimizedInteractiveText } from './OptimizedInteractiveText.tsx';
 import { getThemeColors } from './utils/themeUtils';
-import { enhanceStoryItems } from './utils/storyImageEnhancer';
 
 // Helper functions moved to extracted files
 
@@ -112,21 +111,6 @@ export const GameScreen: React.FC<{
     const [historyCompressionState, historyCompressionActions] = useHistoryCompression(initialGameState);
     const [gameState, gameStateActions] = useGameState(initialGameState, isAiReady, rehydratedLog, rehydratedChoices);
     const [modalState, modalStateActions] = useModalState();
-
-    // Image Generation State
-    const [isAutoImageEnabled, setIsAutoImageEnabled] = useState(() => {
-        const saved = localStorage.getItem('rpg-auto-image-enabled');
-        return saved ? JSON.parse(saved) : false;
-    });
-
-    // Save auto image preference
-    useEffect(() => {
-        localStorage.setItem('rpg-auto-image-enabled', JSON.stringify(isAutoImageEnabled));
-    }, [isAutoImageEnabled]);
-
-    const toggleAutoImageGeneration = useCallback(() => {
-        setIsAutoImageEnabled((prev: boolean) => !prev);
-    }, []);
 
     // Extract values from hooks for easier access
     const {
@@ -292,15 +276,6 @@ export const GameScreen: React.FC<{
         
         // Entity export debugging disabled
     }, [gameSettings.entityExportEnabled, gameSettings.entityExportInterval, gameSettings.entityExportDebugLogging]);
-
-    // Auto-enhance story items with image generation
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            enhanceStoryItems();
-        }, 500); // Small delay to ensure DOM is updated
-        
-        return () => clearTimeout(timeout);
-    }, [storyLog]);
     
     // Define generateInitialStory callback before using it
     const generateInitialStory = useCallback(async () => {
@@ -1132,10 +1107,6 @@ export const GameScreen: React.FC<{
                     isAiReady={isAiReady}
                     knownEntities={knownEntities}
                     onEntityClick={handleEntityClick}
-                    isAutoImageEnabled={isAutoImageEnabled}
-                    onToggleAutoImage={toggleAutoImageGeneration}
-                    pcName={pcName}
-                    gameHistoryLength={gameHistory.length}
                 />
                 <ActionPanel
                     isAiReady={isAiReady}
