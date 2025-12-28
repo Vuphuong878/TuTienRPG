@@ -1,76 +1,50 @@
-
 import React from 'react';
-import type { ChangelogEntry } from './types.ts';
-import { ChartIcon, CrossIcon } from './Icons.tsx';
+import { CHANGELOG_DATA, ChangelogEntry } from '../data/changelogData';
 
-const ChangeTag: React.FC<{ type: 'feature' | 'fix' | 'improvement' }> = ({ type }) => {
-    const styles = {
-        feature: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
-        fix: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
-        improvement: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+interface ChangelogModalProps {
+    onClose: () => void;
+}
+
+const ChangeTypeBadge: React.FC<{ type: ChangelogEntry['changes'][0]['type'] }> = ({ type }) => {
+    const typeMap = {
+        new: { label: 'Mới', color: 'w-20 text-center bg-green-900 text-green-300' },
+        update: { label: 'Cập nhật', color: 'w-20 text-center bg-blue-900 text-blue-300' },
+        fix: { label: 'Sửa lỗi', color: 'w-20 text-center bg-yellow-800 text-yellow-200' },
+        balance: { label: 'Cân bằng', color: 'w-20 text-center bg-purple-900 text-purple-300' },
     };
-    const text = {
-        feature: 'Tính năng mới',
-        fix: 'Sửa lỗi',
-        improvement: 'Cải tiến',
-    };
-    return (
-        <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${styles[type]}`}>
-            {text[type]}
-        </span>
-    );
+    const { label, color } = typeMap[type];
+    return <span className={`flex-shrink-0 px-2 py-1 text-xs font-semibold rounded-md ${color}`}>{label}</span>;
 };
 
 
-export const ChangelogModal: React.FC<{
-    isOpen: boolean;
-    onClose: () => void;
-    changelogData: ChangelogEntry[];
-}> = ({ isOpen, onClose, changelogData }) => {
-    if (!isOpen) return null;
-
+const ChangelogModal: React.FC<ChangelogModalProps> = ({ onClose }) => {
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[70] p-4" onClick={onClose}>
-            <div className="bg-white/90 dark:bg-[#252945]/90 backdrop-blur-sm border border-slate-300 dark:border-slate-700 rounded-lg shadow-xl w-full max-w-2xl h-full max-h-[85vh] flex flex-col text-slate-900 dark:text-white" onClick={e => e.stopPropagation()}>
-                <div className="p-4 border-b border-slate-200 dark:border-slate-600 flex justify-between items-center flex-shrink-0">
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <ChartIcon className="w-6 h-6 text-green-500" />
-                        Lịch Sử Cập Nhật Game
-                    </h3>
-                    <button onClick={onClose} className="text-gray-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white text-3xl leading-none">
-                        <CrossIcon className="w-6 h-6"/>
-                    </button>
-                </div>
-                <div className="p-4 md:p-6 flex-grow overflow-y-auto space-y-6">
-                    {changelogData.length > 0 ? (
-                        changelogData.map(entry => (
-                            <div key={entry.version} className="border-l-4 border-green-500/50 pl-4 py-2">
-                                <div className="flex justify-between items-baseline mb-2">
-                                    <h4 className="text-xl font-bold text-slate-800 dark:text-slate-100">
-                                        Phiên bản {entry.version}
-                                    </h4>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400">{entry.date}</p>
-                                </div>
-                                <ul className="space-y-2 list-disc list-inside">
-                                    {entry.changes.map((change, index) => (
-                                        <li key={index} className="text-slate-700 dark:text-slate-300">
-                                            <ChangeTag type={change.type} />
-                                            <span className="ml-2">{change.text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 backdrop-blur-md p-4 animate-fade-in">
+            <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-base)] rounded-2xl shadow-2xl p-8 w-full max-w-2xl text-white relative max-h-[90vh] flex flex-col">
+                <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10">&times;</button>
+                <h2 className="text-3xl font-bold text-center text-[var(--color-accent-light)] mb-6 flex-shrink-0">Lịch Sử Cập Nhật</h2>
+                
+                <div className="flex-grow overflow-y-auto pr-4 space-y-8">
+                    {CHANGELOG_DATA.map(entry => (
+                        <div key={entry.version}>
+                            <div className="flex items-baseline gap-3 mb-3 pb-2 border-b border-[var(--color-border-base)]">
+                                <h3 className="text-2xl font-semibold text-[var(--color-accent)]">{entry.version}</h3>
+                                <span className="text-sm text-[var(--color-text-dark)]">{entry.date}</span>
                             </div>
-                        ))
-                    ) : (
-                        <p className="text-center text-slate-500 dark:text-slate-400 py-8">Không có thông tin cập nhật nào.</p>
-                    )}
-                </div>
-                 <div className="p-3 bg-slate-50/80 dark:bg-[#1f2238]/80 rounded-b-lg flex justify-end items-center flex-shrink-0">
-                     <button onClick={onClose} className="px-4 py-2 bg-slate-600 hover:bg-slate-500 rounded-md text-white text-sm font-semibold transition-colors duration-200">
-                        Đóng
-                    </button>
+                            <ul className="space-y-3">
+                                {entry.changes.map((change, index) => (
+                                    <li key={index} className="flex items-start gap-4 text-[var(--color-text-medium)] leading-relaxed">
+                                        <ChangeTypeBadge type={change.type} />
+                                        <span>{change.description}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
     );
 };
+
+export default ChangelogModal;
