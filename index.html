@@ -1,229 +1,29 @@
 
 <!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="vi" class="dark">
+  <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RPG Tiên Hiệp Designer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:," />
+    <title>Nhập Vai A.I Simulator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom Scrollbar for Webkit browsers */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2); 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(169, 102, 255, 0.3); 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(169, 102, 255, 0.6); 
-        }
-
-        /* Firefox scrollbar */
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(169, 102, 255, 0.3) rgba(0, 0, 0, 0.2);
-        }
-
-        body {
-            font-family: var(--font-family, 'Be Vietnam Pro', sans-serif);
-            background-color: var(--color-bg-main);
-            color: var(--color-text-light);
-            -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape mode */
-            overflow: hidden; /* Prevent body scroll, handle inside components */
-        }
-        /* Improve touch feedback on mobile */
-        .tap-highlight-transparent {
-            -webkit-tap-highlight-color: transparent;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes float-up {
-            from { transform: translateY(0); opacity: 1; }
-            to { transform: translateY(-80px); opacity: 0; }
-        }
-        .animate-float-up {
-            animation: float-up 2s ease-out forwards;
-        }
-
-        @keyframes screen-shake {
-            0% { transform: translate(1px, 1px); } 10% { transform: translate(-1px, -2px); } 20% { transform: translate(-3px, 0px); } 30% { transform: translate(3px, 2px); } 40% { transform: translate(1px, -1px); } 50% { transform: translate(-1px, 2px); } 60% { transform: translate(-3px, 1px); } 70% { transform: translate(3px, 1px); } 80% { transform: translate(-1px, -1px); } 90% { transform: translate(1px, 2px); } 100% { transform: translate(1px, -2px); }
-        }
-        .animate-screen-shake {
-            animation: screen-shake 0.4s;
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 0 15px var(--color-accent-glow-weak), 0 0 20px var(--color-accent-glow-strong);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 30px var(--color-accent-glow-strong), 0 0 45px var(--color-accent-glow-strong);
-                transform: scale(1.05);
-            }
-        }
-        .animate-pulse-glow {
-            animation: pulse-glow 3s infinite ease-in-out;
-        }
-
-        @keyframes pulse-border {
-            0%, 100% { box-shadow: 0 0 0 2px var(--color-border-pulse-start); }
-            50% { box-shadow: 0 0 15px 5px var(--color-border-pulse-end); }
-        }
-        .animate-pulse-border {
-            animation: pulse-border 2s infinite ease-in-out;
-        }
-
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); }
-        }
-        .animate-fade-in-right {
-            animation: fadeInRight 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); }
-        }
-        .animate-fade-in-left {
-            animation: fadeInLeft 0.8s ease-out forwards;
-        }
-        @keyframes scale-up-anim {
-            from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; }
-        }
-        .animate-scale-up {
-            animation: scale-up-anim 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
-        }
-
-        /* Color Theme Variables */
-        :root, html.theme-default {
-            --font-family: 'Be Vietnam Pro', sans-serif;
-            --color-bg-main: #0f0b1e;
-            --color-bg-secondary: #161229;
-            --color-bg-tertiary: #231b3a;
-            --color-bg-quaternary: #35265b;
-            
-            --color-text-light: #f0e6ff;
-            --color-text-medium: #cbbce6;
-            --color-text-dark: #8e7db0;
-            
-            --color-primary: #8b5cf6;
-            --color-primary-light: #a78bfa;
-            --color-primary-dark: #7c3aed;
-            --color-primary-darker: #6d28d9;
-            
-            --color-secondary: #06b6d4;
-            --color-secondary-dark: #0891b2;
-            
-            --color-accent: #f59e0b;
-            --color-accent-light: #fbbf24;
-            --color-accent-dark: #d97706;
-            
-            --color-success: #10b981;
-            --color-danger: #ef4444;
-            --color-info: #3b82f6;
-            
-            --color-border-base: #4c1d95;
-            --color-border-hover: #6d28d9;
-            --color-border-glow: #8b5cf6;
-            --color-border-pulse-start: rgba(139, 92, 246, 0.3);
-            --color-border-pulse-end: rgba(139, 92, 246, 0.6);
-
-            --color-primary-glow: rgba(139, 92, 246, 0.4);
-            
-            --color-accent-glow-weak: rgba(245, 158, 11, 0.2);
-            --color-accent-glow-strong: rgba(245, 158, 11, 0.4);
-            
-            --color-backdrop-bg: rgba(22, 18, 41, 0.75);
-
-            /* Rarity */
-            --rarity-common-text: #9ca3af; --rarity-common-border: rgba(156, 163, 175, 0.3);
-            --rarity-uncommon-text: #34d399; --rarity-uncommon-border: rgba(52, 211, 153, 0.4);
-            --rarity-rare-text: #60a5fa; --rarity-rare-border: rgba(96, 165, 250, 0.5);
-            --rarity-epic-text: #c084fc; --rarity-epic-border: rgba(192, 132, 252, 0.6);
-            --rarity-legendary-text: #fbbf24; --rarity-legendary-border: rgba(251, 191, 36, 0.7);
-            --rarity-mythic-text: #f87171; --rarity-mythic-border: rgba(248, 113, 113, 0.8);
-
-            /* Elements */
-            --element-kim-text: #e5e7eb;
-            --element-moc-text: #4ade80;
-            --element-thuy-text: #60a5fa;
-            --element-hoa-text: #f87171;
-            --element-tho-text: #facc15;
-            --element-vo-text: #c084fc;
-        }
-
-        html.theme-deuteranopia {
-            --color-primary: #0ea5e9; --color-primary-light: #7dd3fc; --color-primary-dark: #0284c7; --color-primary-darker: #0369a1;
-            --color-secondary: #f97316; --color-secondary-dark: #ea580c;
-            --color-accent: #eab308; --color-accent-light: #fde047; --color-accent-dark: #ca8a04;
-            --color-success: var(--color-primary); --color-danger: #f43f5e; --color-info: #a855f7;
-            --color-border-base: #2563eb; --color-border-hover: #3b82f6; --color-border-glow: #60a5fa; --color-border-pulse-start: rgba(14, 165, 233, 0.5); --color-border-pulse-end: rgba(14, 165, 233, 0.8);
-            --rarity-mythic-text: #f43f5e; --rarity-mythic-border: rgba(244, 63, 94, 0.5);
-        }
-
-        html.theme-tritanopia {
-            --color-primary: #ec4899; --color-primary-light: #f9a8d4; --color-primary-dark: #db2777; --color-primary-darker: #9d174d;
-            --color-secondary: #14b8a6; --color-secondary-dark: #0d9488;
-            --color-accent: #f43f5e; --color-accent-light: #fb7185; --color-accent-dark: #e11d48;
-            --color-success: var(--color-secondary); --color-danger: #dc2626; --color-info: #6366f1;
-            --color-border-base: #c026d3; --color-border-hover: #d946ef; --color-border-glow: #e879f9; --color-border-pulse-start: rgba(236, 72, 153, 0.5); --color-border-pulse-end: rgba(236, 72, 153, 0.8);
-            --rarity-rare-text: #6366f1; --rarity-rare-border: rgba(99, 102, 241, 0.5);
-        }
-        
-        html.theme-high-contrast {
-            --color-bg-main: #000000; --color-bg-secondary: #1a1a1a; --color-bg-tertiary: #333333; --color-bg-quaternary: #4d4d4d;
-            --color-text-light: #ffffff; --color-text-medium: #e6e6e6; --color-text-dark: #cccccc;
-            --color-primary: #ffff00; --color-primary-light: #ffff7f; --color-primary-dark: #cccc00; --color-primary-darker: #999900;
-            --color-secondary: #00ffff; --color-secondary-dark: #00cccc;
-            --color-accent: #ff00ff; --color-accent-light: #ff7fff; --color-accent-dark: #cc00cc;
-            --color-success: #00ff00; --color-danger: #ff3333; --color-info: #3399ff;
-            --color-border-base: #ffff00; --color-border-hover: #ffff7f; --color-border-glow: #ffffbf; --color-border-pulse-start: rgba(255, 255, 0, 0.5); --color-border-pulse-end: rgba(255, 255, 0, 0.8);
-            --rarity-epic-text: var(--color-primary); --rarity-epic-border: var(--color-border-base);
-        }
-
-        html.theme-sepia {
-            --color-bg-main: #f4e8d1; --color-bg-secondary: #eaddc4; --color-bg-tertiary: #d0c4a9; --color-bg-quaternary: #bcae95;
-            --color-text-light: #3e2723; --color-text-medium: #5d4037; --color-text-dark: #795548;
-            --color-primary: #8d6e63; --color-primary-light: #a1887f; --color-primary-dark: #6d4c41; --color-primary-darker: #4e342e;
-            --color-secondary: #00695c; --color-secondary-dark: #004d40;
-            --color-accent: #c62828; --color-accent-light: #e53935; --color-accent-dark: #b71c1c;
-            --color-success: #2e7d32; --color-danger: #c62828; --color-info: #1565c0;
-            --color-border-base: rgba(109, 76, 65, 0.2); --color-border-hover: rgba(109, 76, 65, 0.5); --color-border-glow: rgba(141, 110, 99, 0.7); --color-border-pulse-start: rgba(141, 110, 99, 0.5); --color-border-pulse-end: rgba(141, 110, 99, 0.8);
-        }
-        
-        html.reduce-motion [class*="animate-"] { animation: none; }
-        html.reduce-motion * { transition: none !important; }
-    </style>
-<script type="importmap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto+Mono&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.1.1/",
-    "react": "https://esm.sh/react@^19.1.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.11.0",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4"
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.8.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "vite": "https://esm.sh/vite@^7.0.5"
   }
 }
 </script>
 </head>
-<body>
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-25T15:17:47.452Z",
+  "testType": "Entity Deduplication Demo",
+  "scenarios": [
+    {
+      "type": "Companion Recreation Prevention",
+      "entityName": "Sakuya Izayoi",
+      "originalReferenceId": "comp_sakuya_001",
+      "preservedReferenceId": "comp_sakuya_001",
+      "skillsOriginal": 2,
+      "skillsMerged": 5,
+      "relationshipUpdated": true,
+      "success": true
+    },
+    {
+      "type": "Location Enhancement",
+      "entityName": "Thành phố Ma pháp",
+      "originalReferenceId": "loc_magic_city_001",
+      "preservedReferenceId": "loc_magic_city_001",
+      "informationEnhanced": true,
+      "success": true
+    }
+  ],
+  "overallSuccess": true,
+  "preventedDuplications": 2,
+  "preservedReferenceIds": 2,
+  "enhancedEntities": 2
+}

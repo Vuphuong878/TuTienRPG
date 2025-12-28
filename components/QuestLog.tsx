@@ -1,76 +1,57 @@
-
 import React from 'react';
-import { Quest, QuestStatus, QuestType } from '../types';
-import { useGame } from '../contexts/GameContext';
+import type { Quest } from './types';
+import * as GameIcons from './GameIcons';
+import { CrossIcon } from './Icons';
 
-const QuestStatusBadge: React.FC<{ status: QuestStatus }> = ({ status }) => {
-    const statusMap = {
-        [QuestStatus.ACTIVE]: { text: 'Đang làm', color: 'bg-blue-600' },
-        [QuestStatus.AVAILABLE]: { text: 'Có sẵn', color: 'bg-gray-600' },
-        [QuestStatus.COMPLETED]: { text: 'Hoàn thành', color: 'bg-yellow-500 text-black' },
-        [QuestStatus.TURNED_IN]: { text: 'Đã trả', color: 'bg-green-600' },
-    };
-    const { text, color } = statusMap[status];
-    return <span className={`px-2.5 py-1 text-xs font-bold rounded-full ${color}`}>{text}</span>;
+const getIconForQuest = (quest: Quest): React.ReactNode => {
+    if (!quest) return <GameIcons.ScrollIcon />;
+    if (quest.status === 'completed') return <GameIcons.CheckmarkIcon />;
+    if (quest.status === 'failed') return <CrossIcon />;
+    return <GameIcons.ScrollIcon />;
 };
 
-
-const QuestLog: React.FC = () => {
-    const { character, worldState } = useGame();
-    if (!character || !worldState) return null;
-    
-    const activeQuests = character.quests.filter(q => q.status === QuestStatus.ACTIVE || q.status === QuestStatus.COMPLETED);
-    const completedQuests = character.quests.filter(q => q.status === QuestStatus.TURNED_IN);
-
-    const renderQuestList = (quests: Quest[], title: string) => (
-        <div>
-            <h3 className="text-xl font-bold text-yellow-400 mb-3">{title} ({quests.length})</h3>
-            {quests.length === 0 ? (
-                <p className="text-gray-500 italic">Không có nhiệm vụ nào.</p>
-            ) : (
-                <div className="space-y-4">
-                    {quests.map(quest => {
-                        const reputationRewards = quest.rewards.reputationChange?.map(change => {
-                            const faction = worldState.factions.find(f => f.id === change.factionId);
-                            if (!faction) return null;
-                            const amountText = change.amount > 0 ? `+${change.amount}` : `${change.amount}`;
-                            const colorClass = change.amount > 0 ? 'text-green-400' : 'text-red-400';
-                            return <span key={faction.id} className="mr-2">Danh vọng {faction.name} <span className={colorClass}>{amountText}</span></span>;
-                        }).filter(Boolean);
-
-                        return (
-                            <div key={quest.id} className="bg-gray-700/50 p-4 rounded-lg border border-gray-600">
-                                <div className="flex justify-between items-center mb-2">
-                                    <h4 className="text-lg font-semibold text-cyan-300">{quest.title}</h4>
-                                    <QuestStatusBadge status={quest.status} />
-                                </div>
-                                <p className="text-sm text-gray-400 mb-3">{quest.description}</p>
-                                <div className="text-xs space-y-1">
-                                    <p><span className="font-semibold">Mục tiêu:</span> {quest.type === QuestType.GATHER ? 'Thu thập' : 'Săn'} {quest.target.count} {quest.target.targetName} ({quest.target.current}/{quest.target.count})</p>
-                                    <div>
-                                        <span className="font-semibold">Phần thưởng:</span> {quest.rewards.exp} EXP
-                                        {reputationRewards && reputationRewards.length > 0 && (
-                                            <span className="ml-2">{reputationRewards}</span>
-                                        )}
-                                        {quest.rewards.contributionPoints && (
-                                            <span className="ml-2 text-purple-400">{quest.rewards.contributionPoints} Điểm Cống Hiến</span>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-            )}
-        </div>
-    );
+export const QuestLog: React.FC<{ quests: Quest[]; onQuestClick: (quest: Quest) => void }> = ({ quests, onQuestClick }) => {
+    // Handle undefined quests prop
+    const questsArray = quests || [];
+    const activeQuests = questsArray.filter(q => q.status === 'active');
+    const finishedQuests = questsArray.filter(q => q.status !== 'active');
 
     return (
-        <div className="space-y-8 max-h-[70vh] overflow-y-auto pr-3">
-            {renderQuestList(activeQuests, "Nhiệm vụ Đang Theo Dõi")}
-            {renderQuestList(completedQuests, "Nhiệm vụ Đã Hoàn Thành")}
+        <div className="p-4 h-full flex flex-col">
+            <div className="flex-grow overflow-y-auto pr-2 space-y-4">
+                <div>
+                    <h4 className="text-sm font-semibold text-yellow-700 dark:text-yellow-300 mb-2 border-b border-yellow-400/20 pb-1">Đang Thực Hiện</h4>
+                    {activeQuests.length > 0 ? (
+                        <ul className="space-y-2">
+                            {activeQuests.map(quest => (
+                                <li key={quest.title} onClick={() => onQuestClick(quest)} className="text-sm p-2 bg-yellow-400/10 dark:bg-yellow-500/10 border-l-4 border-yellow-600 dark:border-yellow-400 rounded-r-md hover:bg-yellow-400/20 dark:hover:bg-yellow-500/20 transition-colors cursor-pointer">
+                                    <p className="font-semibold text-yellow-800 dark:text-yellow-300 flex items-center gap-2">
+                                        <span className="w-4 h-4">{getIconForQuest(quest)}</span>
+                                        {quest.title}
+                                    </p>
+                                    <p className="text-xs text-yellow-800/80 dark:text-yellow-200/80 pl-6 mt-1">- {quest.objectives.find(o => !o.completed)?.description || "Hoàn thành các mục tiêu."}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : <p className="text-xs text-slate-600 dark:text-slate-400 pl-2 italic">Không có nhiệm vụ nào đang hoạt động.</p>}
+                </div>
+
+                {finishedQuests.length > 0 && (
+                    <div className="pt-2">
+                        <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2 border-b border-slate-300 dark:border-slate-600 pb-1">Đã Kết Thúc</h4>
+                        <ul className="space-y-2">
+                            {finishedQuests.sort((a,b) => a.title.localeCompare(b.title)).map(quest => (
+                                <li key={quest.title} onClick={() => onQuestClick(quest)} className="text-sm p-2 bg-slate-200/50 dark:bg-slate-700/50 border-l-4 border-slate-400 dark:border-slate-500 rounded-r-md hover:bg-slate-300/50 dark:hover:bg-slate-600/50 transition-colors cursor-pointer opacity-70">
+                                    <p className={`font-semibold ${quest.status === 'completed' ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'} flex items-center gap-2`}>
+                                        <span className="w-4 h-4">{getIconForQuest(quest)}</span>
+                                        <span className="line-through">{quest.title}</span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
-
-export default QuestLog;

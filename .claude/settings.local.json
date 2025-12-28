@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(rm:*)",
+      "Bash(diff:*)",
+      "Bash(npx tailwindcss init:*)",
+      "Bash(move:*)",
+      "Bash(mv:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)",
+      "Bash(npx vite:*)",
+      "Bash(npx tsc:*)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(grep:*)",
+      "WebFetch",
+      "Bash(true)",
+      "Bash(timeout 5 npm run dev)",
+      "Bash(timeout 8 npm run dev)",
+      "Bash(del test-refid-hiding.js)"
+    ],
+    "deny": []
+  }
+}

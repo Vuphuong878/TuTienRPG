@@ -1,0 +1,289 @@
+{
+  "genjutsu_categories": {
+    "visual_genjutsu": {
+      "name": "Thị Giác Huyễn Thuật",
+      "techniques": {
+        "sharingan_genjutsu": {
+          "id": "sharingan_genjutsu",
+          "name": "Tà Luân Nhãn Huyễn Thuật",
+          "rank": "B",
+          "chakra_cost": "Medium",
+          "description": "Sử dụng Sharingan để tạo ra ảo giác thị giác, khống chế tâm trí đối thủ",
+          "users": ["Uchiha_clan", "Sasuke", "Itachi", "Kakashi"],
+          "classification": "visual_genjutsu",
+          "requirement": "sharingan",
+          "duration": "Variable"
+        },
+        "magen_narakumi_no_jutsu": {
+          "id": "magen_narakumi_no_jutsu",
+          "name": "Ma Huyễn: Địa Ngục Kiến Thuật",
+          "rank": "D",
+          "chakra_cost": "Low",
+          "description": "Cho đối thủ thấy ảo giác về cái chết của chính họ",
+          "users": ["Kakashi", "general_ninja"],
+          "classification": "visual_genjutsu",
+          "duration": "Short"
+        },
+        "magen_jubaku_satsu": {
+          "id": "magen_jubaku_satsu",
+          "name": "Ma Huyễn: Thụ Phược Sát",
+          "rank": "B",
+          "chakra_cost": "Medium",
+          "description": "Tạo ảo giác về việc bị cây trói buộc và tấn công",
+          "users": ["Yuuhi_Kurenai"],
+          "classification": "visual_genjutsu",
+          "duration": "Medium"
+        }
+      }
+    },
+    "auditory_genjutsu": {
+      "name": "Thính Giác Huyễn Thuật",
+      "techniques": {
+        "nehan_shouja_no_jutsu": {
+          "id": "nehan_shouja_no_jutsu",
+          "name": "Niết Bàn Tinh Xá Thuật",
+          "rank": "A",
+          "chakra_cost": "High",
+          "description": "Sử dụng âm thanh để đưa mục tiêu vào giấc ngủ sâu",
+          "users": ["Kabuto"],
+          "classification": "auditory_genjutsu",
+          "area_effect": true,
+          "duration": "Long"
+        },
+        "tayuya_flute_genjutsu": {
+          "id": "tayuya_flute_genjutsu",
+          "name": "Đa Du Dã Sáo Huyễn Thuật",
+          "rank": "B",
+          "chakra_cost": "Medium",
+          "description": "Sử dụng tiếng sáo để tạo ra các ảo giác phức tạp",
+          "users": ["Tayuya"],
+          "classification": "auditory_genjutsu",
+          "requirement": "cursed_seal",
+          "duration": "Variable"
+        }
+      }
+    },
+    "sharingan_genjutsu": {
+      "name": "Tà Luân Nhãn Huyễn Thuật",
+      "techniques": {
+        "tsukuyomi": {
+          "id": "tsukuyomi",
+          "name": "Nguyệt Độc",
+          "rank": "S",
+          "chakra_cost": "Very_High",
+          "description": "Huyễn thuật tối thượng của Mangekyou Sharingan, khống chế hoàn toàn thời gian và không gian trong thế giới ảo",
+          "users": ["Itachi", "Sasuke"],
+          "classification": "mangekyou_genjutsu",
+          "requirement": "mangekyou_sharingan",
+          "duration": "Instant_but_feels_like_72_hours",
+          "mental_damage": "Extreme"
+        },
+        "kotoamatsukami": {
+          "id": "kotoamatsukami",
+          "name": "Biệt Thiên Thần",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Huyễn thuật tối thượng có thể thay đổi ý chí của mục tiêu mà họ không biết",
+          "users": ["Shisui", "Danzo"],
+          "classification": "mangekyou_genjutsu",
+          "requirement": "mangekyou_sharingan",
+          "cooldown": "10_years",
+          "mental_manipulation": true
+        },
+        "izanami": {
+          "id": "izanami",
+          "name": "Y Tà Na Mỹ",
+          "rank": "S",
+          "chakra_cost": "Sharingan_eye",
+          "description": "Huyễn thuật bẫy đối thủ trong vòng lặp thời gian vô hạn",
+          "users": ["Itachi"],
+          "classification": "forbidden_genjutsu",
+          "requirement": "mangekyou_sharingan",
+          "cost": "permanent_blindness_one_eye",
+          "duration": "Infinite_loop"
+        },
+        "izanagi": {
+          "id": "izanagi",
+          "name": "Y Tà Na Kỳ",
+          "rank": "S",
+          "chakra_cost": "Sharingan_eye",
+          "description": "Biến thực tế thành ảo giác và ảo giác thành thực tế trong thời gian ngắn",
+          "users": ["Danzo", "Obito", "Madara"],
+          "classification": "forbidden_genjutsu",
+          "requirement": "sharingan",
+          "cost": "permanent_blindness_one_eye",
+          "duration": "60_seconds"
+        }
+      }
+    },
+    "rinnegan_genjutsu": {
+      "name": "Luân Hồi Nhãn Huyễn Thuật",
+      "techniques": {
+        "genjutsu_rinne_sharingan": {
+          "id": "genjutsu_rinne_sharingan",
+          "name": "Luân Hồi Tà Luân Nhãn Huyễn Thuật",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Huyễn thuật cực mạnh có thể khống chế cả thế giới",
+          "users": ["Madara", "Kaguya"],
+          "classification": "divine_genjutsu",
+          "requirement": "rinne_sharingan",
+          "area_effect": "Infinite_Tsukuyomi"
+        },
+        "mugen_tsukuyomi": {
+          "id": "mugen_tsukuyomi",
+          "name": "Vô Hạn Nguyệt Độc",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Huyễn thuật tối thượng phản chiếu lên mặt trăng để khống chế toàn thế giới",
+          "users": ["Madara", "Kaguya"],
+          "classification": "world_scale_genjutsu",
+          "requirement": "rinne_sharingan",
+          "area_effect": "Global",
+          "duration": "Permanent_until_released"
+        }
+      }
+    },
+    "curse_mark_genjutsu": {
+      "name": "Chú Ấn Huyễn Thuật",
+      "techniques": {
+        "cursed_seal_mental_invasion": {
+          "id": "cursed_seal_mental_invasion",
+          "name": "Chú Ấn Tinh Thần Xâm Nhập",
+          "rank": "A",
+          "chakra_cost": "High",
+          "description": "Sử dụng sức mạnh chú ấn để xâm nhập tâm trí đối thủ",
+          "users": ["Orochimaru", "curse_mark_users"],
+          "classification": "curse_genjutsu",
+          "requirement": "curse_mark"
+        }
+      }
+    },
+    "nature_genjutsu": {
+      "name": "Tự Nhiên Huyễn Thuật",
+      "techniques": {
+        "mokuton_kajukai_korin": {
+          "id": "mokuton_kajukai_korin",
+          "name": "Mộc Độn: Hoa Thụ Giới Giáng Lâm",
+          "rank": "A",
+          "chakra_cost": "Very_High",
+          "description": "Tạo ra rừng cây với phấn hoa gây ảo giác",
+          "users": ["Hashirama"],
+          "classification": "nature_genjutsu",
+          "requirement": "mokuton",
+          "area_effect": true
+        }
+      }
+    },
+    "tailed_beast_genjutsu": {
+      "name": "Vĩ Thú Huyễn Thuật",
+      "techniques": {
+        "bijuu_chakra_genjutsu": {
+          "id": "bijuu_chakra_genjutsu",
+          "name": "Vĩ Thú Chakra Huyễn Thuật",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Sử dụng chakra vĩ thú để tạo ra huyễn thuật cực mạnh",
+          "users": ["Jinchuuriki"],
+          "classification": "bijuu_genjutsu",
+          "requirement": "tailed_beast_chakra"
+        }
+      }
+    }
+  },
+  "genjutsu_mechanics": {
+    "activation_methods": {
+      "eye_contact": {
+        "name": "Tiếp Xúc Mắt",
+        "description": "Kích hoạt bằng cách nhìn vào mắt đối thủ",
+        "examples": ["sharingan_genjutsu", "tsukuyomi"]
+      },
+      "hand_seals": {
+        "name": "Kết Ấn",
+        "description": "Sử dụng các ấn tay để kích hoạt",
+        "examples": ["magen_narakumi_no_jutsu"]
+      },
+      "sound": {
+        "name": "Âm Thanh",
+        "description": "Sử dụng âm thanh để kích hoạt",
+        "examples": ["nehan_shouja_no_jutsu", "tayuya_flute_genjutsu"]
+      },
+      "touch": {
+        "name": "Chạm",
+        "description": "Kích hoạt bằng cách chạm vào đối thủ",
+        "examples": ["finger_genjutsu"]
+      }
+    },
+    "detection_methods": {
+      "pain_stimulus": {
+        "name": "Kích Thích Đau",
+        "description": "Gây đau để thoát khỏi huyễn thuật",
+        "effectiveness": "Low_to_Medium"
+      },
+      "chakra_disruption": {
+        "name": "Phá Vỡ Chakra",
+        "description": "Làm xáo trộn chakra để phá vỡ huyễn thuật",
+        "effectiveness": "Medium_to_High"
+      },
+      "partner_assistance": {
+        "name": "Hỗ Trợ Đồng Đội",
+        "description": "Đồng đội làm xáo trộn chakra để giải thoát",
+        "effectiveness": "High"
+      },
+      "sharingan": {
+        "name": "Tà Luân Nhãn",
+        "description": "Sử dụng Sharingan để nhìn thấy chakra huyễn thuật",
+        "effectiveness": "Very_High"
+      },
+      "byakugan": {
+        "name": "Bạch Nhãn",
+        "description": "Nhìn thấy dòng chakra để phát hiện huyễn thuật",
+        "effectiveness": "High"
+      }
+    },
+    "resistance_factors": {
+      "strong_will": {
+        "name": "Ý Chí Mạnh Mẽ",
+        "description": "Ý chí cao có thể chống lại huyễn thuật yếu"
+      },
+      "mental_training": {
+        "name": "Rèn Luyện Tinh Thần",
+        "description": "Luyện tập để tăng khả năng chống huyễn thuật"
+      },
+      "jinchuuriki_status": {
+        "name": "Trạng Thái Nhân Trụ Lực",
+        "description": "Vĩ thú có thể giúp phá vỡ huyễn thuật"
+      },
+      "doujutsu": {
+        "name": "Đồng Thuật",
+        "description": "Các loại mắt đặc biệt có khả năng chống huyễn thuật"
+      }
+    }
+  },
+  "famous_genjutsu_users": {
+    "uchiha_itachi": {
+      "name": "Uchiha Itachi",
+      "specialty": "Tsukuyomi, Sharingan Genjutsu",
+      "level": "Master",
+      "signature_technique": "tsukuyomi"
+    },
+    "yuuhi_kurenai": {
+      "name": "Yuuhi Kurenai",
+      "specialty": "Visual Genjutsu",
+      "level": "Jounin",
+      "signature_technique": "magen_jubaku_satsu"
+    },
+    "uchiha_shisui": {
+      "name": "Uchiha Shisui",
+      "specialty": "Kotoamatsukami",
+      "level": "Master",
+      "signature_technique": "kotoamatsukami"
+    },
+    "kabuto_yakushi": {
+      "name": "Kabuto Yakushi",
+      "specialty": "Auditory Genjutsu",
+      "level": "Expert",
+      "signature_technique": "nehan_shouja_no_jutsu"
+    }
+  }
+}

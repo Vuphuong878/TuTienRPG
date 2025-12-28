@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Text Manager - Name & Content Fields</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .file-input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .file-input:hover {
+            border-color: #007bff;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .button.success {
+            background: #28a745;
+        }
+        .button.success:hover {
+            background: #218838;
+        }
+        .button.warning {
+            background: #ffc107;
+            color: #333;
+        }
+        .button.warning:hover {
+            background: #e0a800;
+        }
+        .text-area {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+        .results {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid #007bff;
+        }
+        .error {
+            background: #ffe6e6;
+            color: #d32f2f;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #d32f2f;
+            margin-top: 15px;
+        }
+        .field-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .field-path {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .field-content {
+            color: #333;
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .stats {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JSON Text Manager</h1>
+        <p style="text-align: center; color: #666;">Extract and manage 'name' and 'content' fields from JSON files</p>
+        
+        <div class="section">
+            <h2>1. Import JSON File</h2>
+            <input type="file" id="jsonFile" class="file-input" accept=".json" />
+            <button onclick="loadJSON()" class="button">Load JSON</button>
+            <button onclick="clearAll()" class="button warning">Clear All</button>
+        </div>
+
+        <div class="section">
+            <h2>2. Extracted Text Fields</h2>
+            <div id="stats" class="stats" style="display: none;">
+                <strong>Found:</strong> <span id="fieldCount">0</span> name/content fields
+            </div>
+            <div id="extractedFields"></div>
+            <div style="margin-top: 15px;">
+                <button onclick="exportToText()" class="button success" style="display: none;" id="exportBtn">Export to Text File</button>
+                <button onclick="copyToClipboard()" class="button" style="display: none;" id="copyBtn">Copy to Clipboard</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Import Modified Text</h2>
+            <div style="margin-bottom: 15px;">
+                <input type="file" id="textFile" class="file-input" accept=".txt" />
+                <button onclick="loadTextFile()" class="button">Load Text File</button>
+            </div>
+            <textarea id="modifiedText" class="text-area" placeholder="Paste your modified text here or load from file above. Each field should be in format:
+PATH: field.path.here
+CONTENT: field content here
+
+---"></textarea>
+            <button onclick="importModifiedText()" class="button">Apply Changes to JSON</button>
+        </div>
+
+        <div class="section">
+            <h2>4. Export Modified JSON</h2>
+            <button onclick="downloadModifiedJSON()" class="button success" id="downloadBtn" style="display: none;">Download Modified JSON</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        let originalJSON = null;
+        let modifiedJSON = null;
+        let extractedFields = [];
+
+        function showResults(message, isError = false) {
+            const results = document.getElementById('results');
+            results.innerHTML = `<div class="${isError ? 'error' : 'results'}">${message}</div>`;
+        }
+
+        function clearAll() {
+            originalJSON = null;
+            modifiedJSON = null;
+            extractedFields = [];
+            document.getElementById('extractedFields').innerHTML = '';
+            document.getElementById('modifiedText').value = '';
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('exportBtn').style.display = 'none';
+            document.getElementById('copyBtn').style.display = 'none';
+            document.getElementById('downloadBtn').style.display = 'none';
+            document.getElementById('jsonFile').value = '';
+            document.getElementById('textFile').value = '';
+        }
+
+        function loadTextFile() {
+            const fileInput = document.getElementById('textFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResults('Please select a text file first.', true);
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const textContent = e.target.result;
+                    document.getElementById('modifiedText').value = textContent;
+                    showResults('Text file loaded successfully!');
+                } catch (error) {
+                    showResults(`Error reading text file: ${error.message}`, true);
+                }
+            };
+            reader.readAsText(file, 'UTF-8');
+        }
+
+        function loadJSON() {
+            const fileInput = document.getElementById('jsonFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResults('Please select a JSON file first.', true);
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    originalJSON = JSON.parse(e.target.result);
+                    modifiedJSON = JSON.parse(JSON.stringify(originalJSON)); // Deep copy
+                    extractFields();
+                    showResults('JSON file loaded successfully!');
+                } catch (error) {
+                    showResults(`Error parsing JSON: ${error.message}`, true);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function extractFields(obj = originalJSON, path = '') {
+            extractedFields = [];
+            _extractFieldsRecursive(obj, path);
+            displayExtractedFields();
+        }
+
+        function _extractFieldsRecursive(obj, path) {
+            if (typeof obj !== 'object' || obj === null) return;
+
+            for (const [key, value] of Object.entries(obj)) {
+                const currentPath = path ? `${path}.${key}` : key;
+                
+                if (key === 'name' || key === 'content') {
+                    if (typeof value === 'string') {
+                        extractedFields.push({
+                            path: currentPath,
+                            value: value,
+                            originalValue: value
+                        });
+                    }
+                }
+                
+                if (typeof value === 'object' && value !== null) {
+                    _extractFieldsRecursive(value, currentPath);
+                }
+            }
+        }
+
+        function displayExtractedFields() {
+            const container = document.getElementById('extractedFields');
+            
+            if (extractedFields.length === 0) {
+                container.innerHTML = '<div class="error">No name or content fields found in the JSON file.</div>';
+                return;
+            }
+
+            document.getElementById('stats').style.display = 'block';
+            document.getElementById('fieldCount').textContent = extractedFields.length;
+            document.getElementById('exportBtn').style.display = 'inline-block';
+            document.getElementById('copyBtn').style.display = 'inline-block';
+
+            let html = '';
+            extractedFields.forEach((field, index) => {
+                html += `
+                    <div class="field-item">
+                        <div class="field-path">${field.path}</div>
+                        <div class="field-content">${escapeHtml(field.value)}</div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function exportToText() {
+            if (extractedFields.length === 0) {
+                showResults('No fields to export.', true);
+                return;
+            }
+
+            let text = '# JSON Text Fields Export\n# Format: PATH: field.path.here\n# CONTENT: field content\n\n';
+            
+            extractedFields.forEach(field => {
+                text += `PATH: ${field.path}\n`;
+                text += `CONTENT: ${field.value}\n\n---\n\n`;
+            });
+
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'json_text_fields.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showResults('Text file exported successfully!');
+        }
+
+        function copyToClipboard() {
+            if (extractedFields.length === 0) {
+                showResults('No fields to copy.', true);
+                return;
+            }
+
+            let text = '';
+            extractedFields.forEach(field => {
+                text += `PATH: ${field.path}\nCONTENT: ${field.value}\n\n---\n\n`;
+            });
+
+            navigator.clipboard.writeText(text).then(() => {
+                showResults('Text copied to clipboard!');
+            }).catch(err => {
+                showResults('Failed to copy to clipboard: ' + err.message, true);
+            });
+        }
+
+        function importModifiedText() {
+            const text = document.getElementById('modifiedText').value;
+            if (!text.trim()) {
+                showResults('Please paste modified text first.', true);
+                return;
+            }
+
+            if (!originalJSON) {
+                showResults('Please load a JSON file first.', true);
+                return;
+            }
+
+            try {
+                const sections = text.split(/---+/).filter(section => section.trim());
+                let updatedCount = 0;
+
+                sections.forEach(section => {
+                    const lines = section.trim().split('\n');
+                    let path = '';
+                    let content = '';
+                    let isContent = false;
+
+                    lines.forEach(line => {
+                        if (line.startsWith('PATH: ')) {
+                            path = line.substring(6).trim();
+                            isContent = false;
+                        } else if (line.startsWith('CONTENT: ')) {
+                            content = line.substring(9);
+                            isContent = true;
+                        } else if (isContent) {
+                            content += '\n' + line;
+                        }
+                    });
+
+                    if (path && content !== '') {
+                        if (setValueByPath(modifiedJSON, path, content)) {
+                            updatedCount++;
+                        }
+                    }
+                });
+
+                if (updatedCount > 0) {
+                    document.getElementById('downloadBtn').style.display = 'inline-block';
+                    showResults(`Successfully updated ${updatedCount} fields in the JSON.`);
+                } else {
+                    showResults('No fields were updated. Please check your text format.', true);
+                }
+
+            } catch (error) {
+                showResults(`Error processing text: ${error.message}`, true);
+            }
+        }
+
+        function setValueByPath(obj, path, value) {
+            const keys = path.split('.');
+            let current = obj;
+
+            for (let i = 0; i < keys.length - 1; i++) {
+                const key = keys[i];
+                if (!(key in current) || typeof current[key] !== 'object') {
+                    return false;
+                }
+                current = current[key];
+            }
+
+            const lastKey = keys[keys.length - 1];
+            if (lastKey in current) {
+                current[lastKey] = value;
+                return true;
+            }
+            return false;
+        }
+
+        function downloadModifiedJSON() {
+            if (!modifiedJSON) {
+                showResults('No modified JSON available.', true);
+                return;
+            }
+
+            const jsonString = JSON.stringify(modifiedJSON, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'modified_config.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showResults('Modified JSON file downloaded successfully!');
+        }
+    </script>
+</body>
+</html>

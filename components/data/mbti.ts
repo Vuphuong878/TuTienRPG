@@ -1,0 +1,18 @@
+export const MBTI_PERSONALITIES: { [key: string]: { title: string; description: string } } = {
+    'INTJ': { title: 'Kiến trúc sư', description: 'Nhà tư tưởng chiến lược, có kế hoạch cho mọi thứ.' },
+    'INTP': { title: 'Nhà logic học', description: 'Nhà phát minh sáng tạo với khao khát kiến thức.' },
+    'ENTJ': { title: 'Chỉ huy', description: 'Nhà lãnh đạo táo bạo, giàu trí tưởng tượng và có ý chí mạnh mẽ, luôn tìm ra hoặc tạo ra một con đường.' },
+    'ENTP': { title: 'Người tranh luận', description: 'Nhà tư tưởng thông minh và tò mò, không thể cưỡng lại một thử thách trí tuệ.' },
+    'INFJ': { title: 'Người ủng hộ', description: 'Yên tĩnh và huyền bí, nhưng là những nhà lý tưởng đầy cảm hứng và không mệt mỏi.' },
+    'INFP': { title: 'Người hòa giải', description: 'Nhà thơ, tốt bụng và vị tha, luôn mong muốn giúp đỡ một mục đích tốt đẹp.' },
+    'ENFJ': { title: 'Người lãnh đạo', description: 'Nhà lãnh đạo lôi cuốn và truyền cảm hứng, có khả năng làm say lòng người nghe.' },
+    'ENFP': { title: 'Nhà vận động', description: 'Tinh thần tự do nhiệt tình, sáng tạo và hòa đồng, luôn có thể tìm thấy lý do để mỉm cười.' },
+    'ISTJ': { title: 'Nhà hậu cần', description: 'Cá nhân thực tế và dựa trên sự thật, có độ tin cậy không thể nghi ngờ.' },
+    'ISFJ': { title: 'Người bảo vệ', description: 'Người bảo vệ rất tận tâm và nồng hậu, luôn sẵn sàng bảo vệ những người thân yêu của họ.' },
+    'ESTJ': { title: 'Giám đốc', description: 'Nhà quản lý xuất sắc, có một không hai trong việc quản lý mọi thứ hoặc con người.' },
+    'ESFJ': { title: 'Lãnh sự', description: 'Những người cực kỳ quan tâm, hòa đồng và được yêu mến, luôn háo hức giúp đỡ.' },
+    'ISTP': { title: 'Nhà kỹ thuật', description: 'Người thử nghiệm táo bạo và thực tế, bậc thầy của tất cả các loại công cụ.' },
+    'ISFP': { title: 'Nhà thám hiểm', description: 'Nghệ sĩ linh hoạt và quyến rũ, luôn sẵn sàng khám phá và trải nghiệm những điều mới.' },
+    'ESTP': { title: 'Doanh nhân', description: 'Những người thông minh, năng động và rất tinh ý, thực sự thích sống ở bên bờ vực thẳm.' },
+    'ESFP': { title: 'Người giải trí', description: 'Những người giải trí tự phát, năng động và nhiệt tình, cuộc sống không bao giờ nhàm chán xung quanh họ.' },
+};

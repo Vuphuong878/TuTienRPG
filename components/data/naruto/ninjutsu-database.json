@@ -1,0 +1,339 @@
+{
+  "ninjutsu_categories": {
+    "basic_techniques": {
+      "name": "Cơ Bản Nhẫn Thuật",
+      "techniques": {
+        "bunshin_no_jutsu": {
+          "id": "bunshin_no_jutsu",
+          "name": "Phân Thân Thuật",
+          "rank": "E",
+          "chakra_cost": "Low",
+          "hand_seals": ["Ram", "Snake", "Tiger"],
+          "description": "Tạo ra các bản sao ảo của bản thân để đánh lạc hướng đối thủ",
+          "users": ["academy_students", "all_ninja"],
+          "classification": "clone_technique"
+        },
+        "kawarimi_no_jutsu": {
+          "id": "kawarimi_no_jutsu", 
+          "name": "Thế Thân Thuật",
+          "rank": "E",
+          "chakra_cost": "Low",
+          "hand_seals": ["Tiger", "Boar", "Ox", "Dog", "Snake"],
+          "description": "Thay thế vị trí với một vật thể khác trong khoảnh khắc bị tấn công",
+          "users": ["academy_students", "all_ninja"],
+          "classification": "substitution_technique"
+        },
+        "henge_no_jutsu": {
+          "id": "henge_no_jutsu",
+          "name": "Biến Hóa Thuật", 
+          "rank": "E",
+          "chakra_cost": "Low",
+          "hand_seals": ["Dog", "Boar", "Ram"],
+          "description": "Biến đổi hình dạng thành người hoặc vật khác",
+          "users": ["academy_students", "all_ninja"],
+          "classification": "transformation_technique"
+        }
+      }
+    },
+    "fire_release": {
+      "name": "Hỏa Độn",
+      "techniques": {
+        "katon_goukakyuu_no_jutsu": {
+          "id": "katon_goukakyuu_no_jutsu",
+          "name": "Hỏa Độn: Hào Hỏa Cầu Thuật",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "hand_seals": ["Horse", "Tiger", "Ram", "Monkey", "Boar", "Horse", "Tiger"],
+          "description": "Phun ra một quả cầu lửa khổng lồ thiêu đốt mọi thứ trên đường đi",
+          "users": ["Uchiha_clan", "Sasuke", "Itachi", "Madara"],
+          "classification": "offensive_ninjutsu",
+          "element": "fire"
+        },
+        "katon_ryuuka_no_jutsu": {
+          "id": "katon_ryuuka_no_jutsu",
+          "name": "Hỏa Độn: Long Hỏa Thuật",
+          "rank": "C",
+          "chakra_cost": "Medium", 
+          "hand_seals": ["Tiger"],
+          "description": "Tạo ra dòng lửa hình con rồng tấn công theo đường thẳng",
+          "users": ["Sasuke", "Itachi"],
+          "classification": "offensive_ninjutsu",
+          "element": "fire"
+        },
+        "katon_goenkyuu": {
+          "id": "katon_goenkyuu",
+          "name": "Hỏa Độn: Hào Viêm Cầu",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Tạo ra nhiều quả cầu lửa nhỏ bay về nhiều hướng khác nhau",
+          "users": ["Itachi", "Sasuke"],
+          "classification": "offensive_ninjutsu",
+          "element": "fire"
+        }
+      }
+    },
+    "water_release": {
+      "name": "Thủy Độn",
+      "techniques": {
+        "suiton_mizurappa": {
+          "id": "suiton_mizurappa",
+          "name": "Thủy Độn: Thủy Loạn Ba",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "description": "Phun ra dòng nước mạnh từ miệng để tấn công hoặc đẩy lùi đối thủ",
+          "users": ["Tobirama", "Kakashi", "Yamato"],
+          "classification": "offensive_ninjutsu",
+          "element": "water"
+        },
+        "suiton_daibakufu_no_jutsu": {
+          "id": "suiton_daibakufu_no_jutsu",
+          "name": "Thủy Độn: Đại Bạo Bố Thuật",
+          "rank": "A",
+          "chakra_cost": "Very_High",
+          "description": "Tạo ra thác nước khổng lồ tấn công kẻ địch với sức mạnh hủy diệt",
+          "users": ["Tobirama", "Kisame"],
+          "classification": "offensive_ninjutsu",
+          "element": "water"
+        },
+        "suiton_suijinheki": {
+          "id": "suiton_suijinheki",
+          "name": "Thủy Độn: Thủy Trận Bích",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Tạo ra bức tường nước bảo vệ khỏi các cuộc tấn công",
+          "users": ["Tobirama", "Kakashi"],
+          "classification": "defensive_ninjutsu",
+          "element": "water"
+        }
+      }
+    },
+    "earth_release": {
+      "name": "Thổ Độn",
+      "techniques": {
+        "doton_doryuuheki": {
+          "id": "doton_doryuuheki",
+          "name": "Thổ Độn: Thổ Lưu Bích",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Nâng một bức tường đất cao để bảo vệ hoặc chặn đường",
+          "users": ["Kakashi", "Hiruzen", "Yamato"],
+          "classification": "defensive_ninjutsu",
+          "element": "earth"
+        },
+        "doton_doryuu_taiga": {
+          "id": "doton_doryuu_taiga",
+          "name": "Thổ Độn: Thổ Lưu Đại Hà",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Biến mặt đất thành dòng bùn trơn trượt cuốn trôi kẻ địch",
+          "users": ["Jiraiya", "Hiruzen"],
+          "classification": "offensive_ninjutsu",
+          "element": "earth"
+        },
+        "doton_moguragakure_no_jutsu": {
+          "id": "doton_moguragakure_no_jutsu",
+          "name": "Thổ Độn: Thổ Long Ẩn Thuật",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "description": "Di chuyển dưới lòng đất như chuột chũi để tấn công bất ngờ",
+          "users": ["Kishimoto_ninja"],
+          "classification": "supplementary_ninjutsu",
+          "element": "earth"
+        }
+      }
+    },
+    "wind_release": {
+      "name": "Phong Độn",
+      "techniques": {
+        "futon_daitoppa": {
+          "id": "futon_daitoppa",
+          "name": "Phong Độn: Đại Đột Phá",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "description": "Tạo ra cơn gió mạnh thổi bay kẻ địch và các vật cản",
+          "users": ["Orochimaru", "Temari"],
+          "classification": "offensive_ninjutsu",
+          "element": "wind"
+        },
+        "futon_rasengan": {
+          "id": "futon_rasengan",
+          "name": "Phong Độn: Xoáy Nguyên Hoàn",
+          "rank": "A",
+          "chakra_cost": "Very_High",
+          "description": "Rasengan được tăng cường với thuộc tính gió, sức mạnh cắt cực mạnh",
+          "users": ["Naruto"],
+          "classification": "offensive_ninjutsu",
+          "element": "wind"
+        },
+        "futon_kamaitachi": {
+          "id": "futon_kamaitachi",
+          "name": "Phong Độn: Kiếm Sơn Thiết",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "description": "Tạo ra lưỡi gió sắc bén có thể cắt đứt mọi thứ",
+          "users": ["Temari", "Baki"],
+          "classification": "offensive_ninjutsu",
+          "element": "wind"
+        }
+      }
+    },
+    "lightning_release": {
+      "name": "Lôi Độn",
+      "techniques": {
+        "raiton_chidori": {
+          "id": "raiton_chidori",
+          "name": "Lôi Độn: Thiên Điểu",
+          "rank": "A",
+          "chakra_cost": "High",
+          "description": "Tập trung chakra sấm sét vào tay tạo thành mũi nhọn xuyên thủng mọi thứ",
+          "users": ["Kakashi", "Sasuke"],
+          "classification": "offensive_ninjutsu",
+          "element": "lightning"
+        },
+        "raiton_kirin": {
+          "id": "raiton_kirin",
+          "name": "Lôi Độn: Kỳ Lân",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Sử dụng sấm sét tự nhiên tạo thành hình kỳ lân tấn công với sức mạnh kinh hoàng",
+          "users": ["Sasuke"],
+          "classification": "offensive_ninjutsu",
+          "element": "lightning"
+        },
+        "raiton_gian": {
+          "id": "raiton_gian",
+          "name": "Lôi Độn: Ngụy Ám",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Phun ra tia sét từ miệng với tốc độ ánh sáng",
+          "users": ["Kakuzu"],
+          "classification": "offensive_ninjutsu",
+          "element": "lightning"
+        }
+      }
+    },
+    "shadow_techniques": {
+      "name": "Bóng Thuật",
+      "techniques": {
+        "kage_bunshin_no_jutsu": {
+          "id": "kage_bunshin_no_jutsu",
+          "name": "Ảnh Phân Thân Thuật",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Tạo ra các bản sao thật có thể chiến đấu và truyền lại kinh nghiệm",
+          "users": ["Naruto", "Hiruzen", "Kakashi"],
+          "classification": "clone_technique"
+        },
+        "kagemane_no_jutsu": {
+          "id": "kagemane_no_jutsu",
+          "name": "Ảnh Mạo Thuật",
+          "rank": "C",
+          "chakra_cost": "Medium",
+          "description": "Điều khiển bóng để trói buộc và khống chế đối thủ",
+          "users": ["Shikamaru", "Nara_clan"],
+          "classification": "supplementary_ninjutsu"
+        },
+        "kage_kubi_shibari_no_jutsu": {
+          "id": "kage_kubi_shibari_no_jutsu",
+          "name": "Ảnh Thủ Sổ Thuật",
+          "rank": "B",
+          "chakra_cost": "High",
+          "description": "Sử dụng bóng để bóp cổ và siết chết đối thủ",
+          "users": ["Shikamaru", "Nara_clan"],
+          "classification": "offensive_ninjutsu"
+        }
+      }
+    },
+    "sealing_techniques": {
+      "name": "Phong Ấn Thuật",
+      "techniques": {
+        "fuuinjutsu_shishou_fuuin": {
+          "id": "fuuinjutsu_shishou_fuuin",
+          "name": "Phong Ấn Thuật: Tử Thần Phong Ấn",
+          "rank": "S",
+          "chakra_cost": "Life_Force",
+          "description": "Triệu hồi Tử Thần để phong ấn linh hồn, người thi triển sẽ chết",
+          "users": ["Minato", "Hiruzen"],
+          "classification": "sealing_technique",
+          "forbidden": true
+        },
+        "fuuinjutsu_gogyo_fuuin": {
+          "id": "fuuinjutsu_gogyo_fuuin",
+          "name": "Phong Ấn Thuật: Ngũ Hành Phong Ấn",
+          "rank": "A",
+          "chakra_cost": "Very_High",
+          "description": "Phong ấn chakra của đối thủ bằng 5 ngón tay",
+          "users": ["Orochimaru"],
+          "classification": "sealing_technique"
+        },
+        "hiraishin_no_jutsu": {
+          "id": "hiraishin_no_jutsu",
+          "name": "Phi Lôi Thần Thuật",
+          "rank": "S",
+          "chakra_cost": "Very_High",
+          "description": "Dịch chuyển tức thời đến vị trí có dấu hiệu đã đặt trước",
+          "users": ["Minato", "Tobirama"],
+          "classification": "space_time_ninjutsu"
+        }
+      }
+    },
+    "summoning_techniques": {
+      "name": "Thông Linh Thuật",
+      "techniques": {
+        "kuchiyose_no_jutsu": {
+          "id": "kuchiyose_no_jutsu",
+          "name": "Khẩu Ký Thuật",
+          "rank": "C",
+          "chakra_cost": "Variable",
+          "hand_seals": ["Boar", "Dog", "Bird", "Monkey", "Ram"],
+          "description": "Triệu hồi động vật đã ký hợp đồng để hỗ trợ chiến đấu",
+          "users": ["Jiraiya", "Tsunade", "Orochimaru", "Naruto", "Sasuke"],
+          "classification": "summoning_technique"
+        },
+        "edo_tensei": {
+          "id": "edo_tensei",
+          "name": "Uế Thổ Chuyển Sinh",
+          "rank": "S",
+          "chakra_cost": "Extreme",
+          "description": "Hồi sinh người chết bằng cách hy sinh người sống làm tế phẩm",
+          "users": ["Tobirama", "Orochimaru", "Kabuto"],
+          "classification": "summoning_technique",
+          "forbidden": true
+        }
+      }
+    },
+    "medical_ninjutsu": {
+      "name": "Y Liệu Nhẫn Thuật",
+      "techniques": {
+        "shousen_jutsu": {
+          "id": "shousen_jutsu",
+          "name": "Chưởng Tiên Thuật",
+          "rank": "A",
+          "chakra_cost": "High",
+          "description": "Sử dụng chakra để chữa lành vết thương và hồi phục sức khỏe",
+          "users": ["Tsunade", "Sakura", "Kabuto", "Shizune"],
+          "classification": "medical_ninjutsu"
+        },
+        "ninpou_sosei_no_jutsu": {
+          "id": "ninpou_sosei_no_jutsu",
+          "name": "Nhẫn Pháp: Tái Sinh Thuật",
+          "rank": "S",
+          "chakra_cost": "Life_Force",
+          "description": "Hồi sinh người đã chết bằng cách hy sinh mạng sống của mình",
+          "users": ["Chiyo"],
+          "classification": "medical_ninjutsu",
+          "forbidden": true
+        },
+        "chakra_no_mesu": {
+          "id": "chakra_no_mesu",
+          "name": "Chakra Đao",
+          "rank": "B",
+          "chakra_cost": "Medium",
+          "description": "Tạo thành lưỡi dao bằng chakra để phẫu thuật hoặc chiến đấu",
+          "users": ["Kabuto", "Tsunade"],
+          "classification": "medical_ninjutsu"
+        }
+      }
+    }
+  }
+}

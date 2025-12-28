@@ -1,0 +1,121 @@
+{
+  "timestamp": "2025-08-25T15:12:45.860Z",
+  "testResults": [
+    {
+      "test": "History Optimization",
+      "passed": false,
+      "value": "88.8%"
+    },
+    {
+      "test": "Save File Compression",
+      "passed": false,
+      "value": "73.7%"
+    },
+    {
+      "test": "Story Continuity Extraction",
+      "passed": true,
+      "value": "✅ Working"
+    },
+    {
+      "test": "Entity Deduplication",
+      "passed": true,
+      "value": "✅ Preserving IDs"
+    },
+    {
+      "test": "Anti-Recreation System",
+      "passed": true,
+      "value": "✅ Warnings Generated"
+    }
+  ],
+  "performanceMetrics": {
+    "saveFileSizeReduction": 74,
+    "historyStorageReduction": 88.8,
+    "tokenBudgetLiberated": 5261,
+    "originalSaveSize": 8378,
+    "optimizedSaveSize": 2206,
+    "originalHistorySize": 7106,
+    "optimizedHistorySize": 793
+  },
+  "sampleOptimizedHistory": [
+    {
+      "role": "user",
+      "action": "Hỏi Sakuya về cách học ma pháp nâng cao",
+      "timestamp": 1756134765857
+    },
+    {
+      "role": "model",
+      "storyContinuity": "\"Đây là Thao túng thời gian cơ bản, một kỹ năng rất hữu ích trong chiến đấu",
+      "stateChanges": "+Skill:Thao túng thời gian cơ bản",
+      "timestamp": 1756134765858
+    },
+    {
+      "role": "user",
+      "action": "Cảm ơn Sakuya và xin phép được học kỹ năng này",
+      "timestamp": 1756134765858
+    }
+  ],
+  "entityMergeTests": {
+    "sakuyaMerge": {
+      "original": {
+        "name": "Sakuya Izayoi",
+        "type": "companion",
+        "referenceId": "comp_sakuya_001",
+        "personality": "Lạnh lùng nhưng tốt bụng",
+        "skills": [
+          "Thao túng thời gian",
+          "Kiếm thuật"
+        ],
+        "relationship": "đồng hành",
+        "realm": "Liên Khí"
+      },
+      "newData": {
+        "name": "Sakuya Izayoi",
+        "type": "npc",
+        "skills": [
+          "Thao túng thời gian",
+          "Ma thuật băng",
+          "Phòng thủ"
+        ],
+        "description": "Một nữ pháp sư mạnh mẽ với khả năng thao túng thời gian và sử dụng ma thuật băng. Cô là một đồng hành đáng tin cậy.",
+        "relationship": "bạn thân"
+      },
+      "merged": {
+        "name": "Sakuya Izayoi",
+        "type": "companion",
+        "referenceId": "comp_sakuya_001",
+        "personality": "Lạnh lùng nhưng tốt bụng",
+        "skills": [
+          "Thao túng thời gian",
+          "Kiếm thuật",
+          "Ma thuật băng",
+          "Phòng thủ"
+        ],
+        "relationship": "bạn thân",
+        "realm": "Liên Khí",
+        "description": "Một nữ pháp sư mạnh mẽ với khả năng thao túng thời gian và sử dụng ma thuật băng. Cô là một đồng hành đáng tin cậy."
+      },
+      "preservedReferenceId": true
+    },
+    "cityMerge": {
+      "original": {
+        "name": "Thành phố Ma pháp",
+        "type": "location",
+        "referenceId": "loc_magic_city_001",
+        "description": "Thành phố lớn nơi các pháp sư sinh sống và học tập"
+      },
+      "merged": {
+        "name": "Thành phố Ma pháp",
+        "type": "location",
+        "referenceId": "loc_magic_city_001",
+        "description": "Thành phố lớn và sầm uất nơi các pháp sư từ khắp nơi tụ tập để học tập và trao đổi kiến thức ma thuật. Thành phố có nhiều thư viện, cửa hàng ma thuật và trường học.",
+        "population": "50,000 pháp sư",
+        "notable_features": [
+          "Thư viện Ma pháp",
+          "Cửa hàng Ma thuật",
+          "Học viện Pháp thuật"
+        ]
+      },
+      "preservedReferenceId": true
+    }
+  }
+}

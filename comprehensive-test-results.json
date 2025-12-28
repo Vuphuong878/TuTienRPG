@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-08-25T15:16:29.024Z",
+  "testType": "Comprehensive Integration Test",
+  "scenario": {
+    "turns": 20,
+    "historyEntries": 40,
+    "entitiesCreated": 3
+  },
+  "performanceMetrics": {
+    "historyReduction": 91.7,
+    "saveFileReduction": 84.7,
+    "tokensLiberated": 45713,
+    "processingEfficiency": "Excellent",
+    "memoryUsage": 15,
+    "loadTimeImprovement": "~153% faster"
+  },
+  "overallScore": 90,
+  "assessment": "Excellent",
+  "detailedResults": {
+    "historyOptimization": {
+      "originalSize": 59812,
+      "optimizedSize": 4957,
+      "reductionPercent": 91.7,
+      "tokensLiberated": 45713
+    },
+    "saveFileOptimization": {
+      "originalSize": 64602,
+      "optimizedSize": 9890,
+      "reductionPercent": 84.7
+    },
+    "entityDeduplication": {
+      "sakuyaTest": {
+        "referenceIdPreserved": true,
+        "skillsMerged": true,
+        "relationshipUpdated": true
+      },
+      "forestTest": {
+        "referenceIdPreserved": true,
+        "descriptionEnhanced": true
+      }
+    }
+  }
+}
