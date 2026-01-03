@@ -1,6 +1,6 @@
 {
-  "name": "RPG ai simulator v1.23.0",
-  "description": "Zack Nova",
+  "name": "Zack Nova Rpg simulator 1.45",
+  "description": "fix lỗi cập nhật tri thức thay vì cập nhật thì lại tạo thêm ",
   "requestFramePermissions": [],
   "prompt": ""
 }
