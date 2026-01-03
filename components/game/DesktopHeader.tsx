@@ -173,7 +173,7 @@ export const DesktopHeader: React.FC<DesktopHeaderProps> = ({
                         ⚙️ Cài đặt
                     </button>
                     <button onClick={() => { onImport(); setShowGameMenu(false); }} className="w-full text-left px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                        📥 Nhập Entity
+                        📥 Nhập Lore Pack
                     </button>
                     <div className="border-t border-slate-200 dark:border-slate-600 my-1"></div>
                     <button onClick={() => { onSave(); setShowGameMenu(false); }} className="w-full text-left px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm flex items-center gap-2 text-slate-700 dark:text-slate-200">

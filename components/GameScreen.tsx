@@ -683,6 +683,50 @@ export const GameScreen: React.FC<{
         setActiveEditLocation(null);
     }, [setKnownEntities, setNotification, setIsEditLocationModalOpen, setActiveEditLocation]);
 
+    const handleToggleEntityPin = useCallback((entityName: string) => {
+        setKnownEntities(prev => {
+            const entity = prev[entityName];
+            if (!entity) return prev;
+
+            const updatedEntity = { ...entity, pinned: !entity.pinned };
+            return {
+                ...prev,
+                [entityName]: updatedEntity,
+            };
+        });
+    }, [setKnownEntities]);
+
+    const handleExportSelectedEntities = useCallback((selectedEntityNames: Set<string>) => {
+        const entitiesToExport: KnownEntities = {};
+        for (const name of selectedEntityNames) {
+            if (knownEntities[name]) {
+                entitiesToExport[name] = knownEntities[name];
+            }
+        }
+
+        const exportObject = {
+            type: "lore_pack",
+            world: worldData.storyName,
+            exportedAt: new Date().toISOString(),
+            entities: entitiesToExport,
+        };
+
+        const jsonString = JSON.stringify(exportObject, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        const storyName = worldData.characterName?.replace(/\s+/g, '_') || 'NhanVat';
+        link.download = `lore-pack-${storyName}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        setNotification(`Đã xuất ${selectedEntityNames.size} thực thể thành công!`);
+        setTimeout(() => setNotification(null), 3000);
+    }, [knownEntities, worldData.storyName, worldData.characterName, setNotification]);
+
     // Handler for updating single entity (used by KnowledgeBase modal for pinning)
     const handleUpdateEntity = useCallback((entityName: string, updatedEntity: Entity) => {
         setKnownEntities(prev => ({
@@ -1221,6 +1265,8 @@ export const GameScreen: React.FC<{
                             handleDeleteStatus={handleDeleteStatus}
                             setActiveQuest={setActiveQuest}
                             handleToggleMemoryPin={handleToggleMemoryPin}
+                            handleToggleEntityPin={handleToggleEntityPin}
+                            handleExportSelectedEntities={handleExportSelectedEntities}
                             handleEntityClick={handleEntityClick}
                             handleSaveRules={handleSaveRules}
                             handleSaveRegexRules={handleSaveRegexRules || undefined}
@@ -1293,6 +1339,9 @@ export const GameScreen: React.FC<{
                     locationDiscoveryOrder 
                 }}
                 onImportSuccess={(results) => {
+                    // Force a state update because the import manager mutates the object directly
+                    setKnownEntities(prev => ({...prev}));
+
                     // Show success notification
                     const totalImported = results.reduce((sum, r) => sum + r.entitiesImported, 0);
                     const totalConflicts = results.reduce((sum, r) => sum + r.conflicts.length, 0);

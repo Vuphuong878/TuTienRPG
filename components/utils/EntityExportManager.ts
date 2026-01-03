@@ -635,17 +635,24 @@ export class EntityExportManager {
      * Validate imported data structure
      */
     private static validateImportData(data: any): boolean {
-        // Check if it has metadata and entities structure
-        if (!data || typeof data !== 'object') return false;
-        if (!data.metadata || !data.entities) return false;
-        if (typeof data.metadata !== 'object' || typeof data.entities !== 'object') return false;
+        // Check for basic structure
+        if (!data || typeof data !== 'object' || !data.entities || typeof data.entities !== 'object') {
+            return false;
+        }
+
+        // Check for new "lore_pack" format
+        if (data.type === 'lore_pack') {
+            return true;
+        }
         
-        // Check metadata fields
-        const metadata = data.metadata;
-        if (!metadata.category || typeof metadata.category !== 'string') return false;
-        if (!metadata.entityCount || typeof metadata.entityCount !== 'number') return false;
+        // Check for old format
+        if (data.metadata && typeof data.metadata === 'object' &&
+            data.metadata.category && typeof data.metadata.category === 'string' &&
+            data.metadata.entityCount && typeof data.metadata.entityCount === 'number') {
+            return true;
+        }
         
-        return true;
+        return false;
     }
 
     /**

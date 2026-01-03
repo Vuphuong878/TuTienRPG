@@ -258,21 +258,37 @@ export class EnhancedRAGSystem {
     ): EntityRelevance[] {
         const { knownEntities, party, gameHistory, statuses } = gameState;
         const relevanceScores: EntityRelevance[] = [];
+
+        // Always include pinned entities with the highest score
+        if (knownEntities) {
+            for (const [name, entity] of Object.entries(knownEntities)) {
+                if (entity.pinned) {
+                    relevanceScores.push({
+                        entity: entity,
+                        score: 200, // Highest score for pinned entities
+                        reason: ['Pinned by user']
+                    });
+                }
+            }
+        }
         
-        // Always include party members with high relevance
+        // Always include party members with high relevance if not already pinned
         if (Array.isArray(party)) {
             party.forEach(member => {
-                relevanceScores.push({
-                    entity: member,
-                    score: 100,
-                    reason: ['Party member']
-                });
+                if (!relevanceScores.some(r => r.entity.name === member.name)) {
+                    relevanceScores.push({
+                        entity: member,
+                        score: 100,
+                        reason: ['Party member']
+                    });
+                }
             });
         }
 
-        // Score all other entities
+        // Score all other non-pinned entities
         for (const [name, entity] of Object.entries(knownEntities)) {
-            if (Array.isArray(party) && party.some(p => p.name === name)) continue;
+            // Skip if already added (as pinned or party member)
+            if (relevanceScores.some(r => r.entity.name === name)) continue;
             
             let score = 0;
             const reasons: string[] = [];
@@ -444,13 +460,18 @@ export class EnhancedRAGSystem {
         const tokensPerEntity = Math.floor(remainingBudget / Math.max(1, nonPartyEntities.length));
         
         nonPartyEntities.forEach(({ entity, score, reason }) => {
-            const entityText = this.formatEntityWithContext(
-                entity,
-                gameState.statuses,
-                reason,
-                tokensPerEntity,
-                gameState
-            );
+            let entityText;
+            if (entity.pinned === true) {
+                 entityText = this.formatEntityWithContext(
+                    entity,
+                    gameState.statuses,
+                    reason,
+                    tokensPerEntity,
+                    gameState
+                );
+            } else {
+                entityText = `• ${entity.name} (${entity.type})`;
+            }
             
             const entityTokens = this.estimateTokens(entityText);
             if (usedTokens + entityTokens <= tokenBudget) {
@@ -611,7 +632,7 @@ export class EnhancedRAGSystem {
         const tokensPerEntity = Math.floor(remainingBudget / Math.max(1, entities.length));
         
         entities.forEach(({ entity, reason }) => {
-            const entityText = this.formatEntityBrief(entity, reason, tokensPerEntity);
+            const entityText = `• ${entity.name} (${entity.type})`;
             const entityTokens = this.estimateTokens(entityText);
             
             if (usedTokens + entityTokens <= tokenBudget) {
@@ -726,7 +747,18 @@ export class EnhancedRAGSystem {
         
         try {
             const { year, month, day, hour, minute } = time;
-            const timeStr = `Năm ${year || '?'} Tháng ${month || '?'} Ngày ${day || '?'}, ${hour || 0} giờ ${minute || 0} phút`;
+            
+            // Determine time of day
+            let timeOfDay = 'Không xác định';
+            const h = hour || 0;
+            if (h >= 4 && h < 7) timeOfDay = 'Sáng sớm (Bình minh)';
+            else if (h >= 7 && h < 11) timeOfDay = 'Buổi sáng';
+            else if (h >= 11 && h < 13) timeOfDay = 'Buổi trưa';
+            else if (h >= 13 && h < 18) timeOfDay = 'Buổi chiều';
+            else if (h >= 18 && h < 22) timeOfDay = 'Buổi tối';
+            else timeOfDay = 'Đêm khuya';
+
+            const timeStr = `Năm ${year || '?'} Tháng ${month || '?'} Ngày ${day || '?'}, ${hour || 0} giờ ${minute || 0} phút [${timeOfDay}]`;
             return turnCount ? `Thời gian: ${timeStr} (Lượt ${turnCount})` : timeStr;
         } catch {
             return 'Lỗi định dạng thời gian';

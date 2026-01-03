@@ -32,12 +32,11 @@ export interface Entity {
   skills?: string[]; // For NPCs
   learnedSkills?: string[]; // For PC
   state?: 'dead' | 'broken' | 'destroyed';
-  pinned?: boolean;             // Đánh dấu entity quan trọng không được xóa
-  [key: string]: any;
+  pinned?: boolean;             // Đánh dấu entity quan trọng, sẽ được đưa vào context prompt
   archived?: boolean;           // Đánh dấu entity đã được archive
-    archivedAt?: number;         // Turn number khi archive
-    lastMentioned?: number;      // Turn cuối cùng được nhắc đến
-    referenceId?: string;        // Unique identifier for exports and cross-referencing
+  archivedAt?: number;         // Turn number khi archive
+  lastMentioned?: number;      // Turn cuối cùng được nhắc đến
+  referenceId?: string;        // Unique identifier for exports and cross-referencing
 }
 
 export interface KnownEntities {
@@ -203,6 +202,7 @@ export interface SaveData {
         month: number;
         day: number;
         hour: number;
+        minute: number;
     };
     chronicle: Chronicle;
     

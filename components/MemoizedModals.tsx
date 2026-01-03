@@ -79,6 +79,8 @@ interface MemoizedModalsProps {
     handleDeleteStatus: (statusName: string, entityName: string) => void;
     setActiveQuest: (quest: Quest | null) => void;
     handleToggleMemoryPin: (index: number) => void;
+    handleToggleEntityPin?: (entityName: string) => void;
+    handleExportSelectedEntities?: (selectedEntityNames: Set<string>) => void;
     handleEntityClick: (entityName: string) => void;
     handleSaveRules: (rules: CustomRule[]) => void;
     handleSaveRegexRules?: (rules: RegexRule[]) => void;
@@ -509,6 +511,8 @@ const MemoizedModalsComponent = ({
     handleDeleteStatus,
     setActiveQuest,
     handleToggleMemoryPin,
+    handleToggleEntityPin,
+    handleExportSelectedEntities,
     handleEntityClick,
     handleSaveRules,
     handleSaveRegexRules,
@@ -621,17 +625,9 @@ const MemoizedModalsComponent = ({
             <KnowledgeBaseModal 
                 isOpen={isKnowledgeModalOpen} 
                 onClose={modalCloseHandlers.knowledge} 
-                pc={entityComputations.pcEntity} 
                 knownEntities={knownEntities} 
-                onEntityClick={handleEntityClick}
-                onUpdateEntity={(entityName: string, updatedEntity: Entity) => {
-                    // For now, we'll use a window global to update entities
-                    // This should be properly passed as props in the future
-                    if ((window as any).updateKnownEntity) {
-                        (window as any).updateKnownEntity(entityName, updatedEntity);
-                    }
-                }}
-                turnCount={turnCount} 
+                onToggleEntityPin={handleToggleEntityPin!}
+                onExportSelected={handleExportSelectedEntities!}
             />
             
             <EnhancedCustomRulesModal 

@@ -113,7 +113,7 @@ export const EntityImportModal: React.FC<EntityImportModalProps> = ({
                 <div className="p-6 border-b-2 border-green-400 flex justify-between items-center">
                     <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 flex items-center gap-3">
                         <span className="text-3xl">📥</span>
-                        Nhập Entity từ File
+                        Nhập Lore Pack
                     </h3>
                     <button 
                         onClick={onClose} 
@@ -348,7 +348,7 @@ export const EntityImportModal: React.FC<EntityImportModalProps> = ({
                                 </>
                             ) : (
                                 <>
-                                    📥 Import Entity
+                                    📥 Import Lore Pack
                                 </>
                             )}
                         </button>
